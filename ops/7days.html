@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staffd.dev — First 7 Days</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<link rel="stylesheet" href="../assets/ops.css">
+<link rel="stylesheet" href="../assets/ops-7days.css">
+</head>
+<body>
+<a href="../index.html" class="ops-back">← staffd.dev</a>
+
+<div class="page">
+
+  <div class="pg-header">
+    <div class="pg-kicker">STAFFD.DEV · LAUNCH PLAYBOOK</div>
+    <h1 class="pg-h1">FIRST<br><em>7 DAYS.</em></h1>
+    <p class="pg-sub">Day-by-day task list split between CEO and COO. Every task has a priority, an owner, and exact scripts where needed. <strong>Click any task to expand the detail and script.</strong> Check off tasks as you complete them.</p>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot ld-ceo"></div>CEO — outreach, sales, strategy</div>
+      <div class="legend-item"><div class="legend-dot ld-coo"></div>COO — ops, systems, bench building</div>
+    </div>
+  </div>
+
+  <div class="week-summary">
+    <div class="ws-title">WEEK 1 GOAL: FOUNDATION</div>
+    <div class="ws-body">By end of day 7: <strong>legal entity in motion, 8+ engineers in your vetting pipeline, first US founder calls booked, website live or in build, all core tools set up.</strong> You are not trying to close a client this week. You are building the machine that closes clients next week.</div>
+    <div class="ws-metrics">
+      <div class="ws-metric"><div class="ws-metric-num">20</div><div class="ws-metric-label">US contacts messaged</div></div>
+      <div class="ws-metric"><div class="ws-metric-num">8+</div><div class="ws-metric-label">engineers in pipeline</div></div>
+      <div class="ws-metric"><div class="ws-metric-num">3</div><div class="ws-metric-label">discovery calls booked</div></div>
+      <div class="ws-metric"><div class="ws-metric-num">1</div><div class="ws-metric-label">technical reviewer secured</div></div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-block d1 open" id="day1">
+    <div class="day-header" onclick="toggleDay('day1')">
+      <div class="day-h-left">
+        <div class="day-num">01</div>
+        <div class="day-title-wrap">
+          <div class="day-label">MONDAY · WEEK 1</div>
+          <div class="day-title">FIRE THE STARTING GUN</div>
+        </div>
+      </div>
+      <div class="day-h-right">
+        <div class="day-badge db-ceo">CEO: 6 tasks</div>
+        <div class="day-badge db-coo">COO: 7 tasks</div>
+        <div class="day-chevron">▼</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="split-grid">
+        <div class="split-col ceo-col">
+          <div class="split-label ceo">CEO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Register staffd.dev domain on Namecheap</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Go to namecheap.com. Search staffd.dev — if taken, get staffd.co as backup. Buy both if available (~$35 total). Also buy staffd.com even if parked — prevents squatting. Set up DNS forwarding later. Do this before anything else today.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Set up Google Workspace email</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Go to workspace.google.com. Connect your staffd.dev domain. Set up yourname@staffd.dev and ops@staffd.dev (for COO). Takes 30 mins. $6/user/month. Every outreach email you send today needs to come from this address.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">File Wyoming LLC</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Go to wyomingagents.com or incfile.com. File a Wyoming LLC. $50/year state fee. Takes 3–5 business days to process. You need this to open Mercury bank. Name it "Staffd LLC" or "Staffd Inc." — keep it clean. COO will handle the Mercury application once you have the LLC docs.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Update LinkedIn profile</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Update headline to: "Co-founder @ Staffd | Pre-vetted Pakistani engineers for US seed-stage startups | 7-day placement guarantee"<br>Update About section to 3 sentences: what you do, who you serve, the guarantee. Don't post anything yet — just fix the profile so when US founders look you up, they see something credible.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Send 10 warm US contact messages</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">
+                Pull up your US network. You need people who are: seed/pre-A founders, CTOs, or operators at startups 5–50 people. Send this exact message today via LinkedIn DM or WhatsApp:
+                <div class="script-snippet">
+                  <div class="script-label">EXACT MESSAGE — DO NOT REWRITE</div>
+                  "Hey [Name] — I'm building a vetted roster of remote React/Node engineers for US seed founders. Before I open it up publicly, wanted to offer you first access — or if you know anyone stuck in hiring hell right now, I'd love an intro. 15 minutes with me could save them 6 weeks of pain. Who comes to mind?"
+                </div>
+                Send to 10 people today. 10 more tomorrow. Personalize only the opener "Hey [Name]" — the rest stays identical.
+              </div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Message 5 senior engineers for technical reviewer role</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">
+                You need a senior React/Node engineer (5+ years) who can score vetting tasks. PKR 4,000 per review, async, 24-hour turnaround. Message 5 people from your network today:
+                <div class="script-snippet">
+                  <div class="script-label">EXACT MESSAGE</div>
+                  "Hey [Name] — I'm launching a dev staffing company and need a part-time technical reviewer. Job is: review candidates' coding tasks using my scoring rubric. PKR 4k per review, fully async, you'd get 3–5 per week max when we're ramping. No ongoing commitment. 15 mins of your time per task. Interested?"
+                </div>
+                You need 2 people confirmed before you start Stage 3 vetting. Goal: at least 2 say yes this week.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-col coo-col">
+          <div class="split-label coo">COO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Build Notion workspace — 4 databases</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Create 4 databases in Notion today:<br><br><strong>1. Talent DB:</strong> Name, stack, tier, vetting stage, score, rate, availability, GitHub, contract signed<br><strong>2. Client DB:</strong> Company, contact, stage, MRR, satisfaction score, next check-in<br><strong>3. Placements DB:</strong> Engineer + client relation, start date, status, rates, 30/60/90 day scores<br><strong>4. Vetting Pipeline:</strong> Candidate, stage, referral source, tech score, comms score, decision date<br><br>Use Notion's relation feature to link Talent → Placements → Clients. This is your entire operating system.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Set up Wise Business account</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Go to wise.com/business. Apply with your Pakistani ID and business details. Wise lets you receive USD from clients and send PKR to engineers. Approve process takes 2–5 days. Start today so it's live before your first payment.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Create Google Form — engineer application intake</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Build a Google Form with these fields: Full name, Email, LinkedIn, GitHub URL, Years of experience, Primary stack (React/Node/Python/other), Current availability, English proficiency (self-rated 1–5), Preferred monthly rate (USD), "Why do you want to work with US startups?" (paragraph). This form goes into your Notion Vetting Pipeline DB automatically via Zapier or manually.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Send 20 engineer outreach messages (Ring 1)</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">
+                Ring 1 = engineers from your direct network. People you know or have worked with. Message them on LinkedIn or WhatsApp:
+                <div class="script-snippet">
+                  <div class="script-label">EXACT MESSAGE — RING 1</div>
+                  "Hey [Name] — I'm building a talent network that places top Pakistani React/Node devs into US seed-stage startups. Monthly retainer model, full remote, USD pay. You'd go through our vetting process (takes about a week) and then sit on our bench for matching. Pay is $X–X/month depending on your level. Interested in hearing more?"
+                </div>
+                Goal: 20 messages today. These are people you know — response rate should be 40–60%.
+              </div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Set up Calendly + Zoom</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Create a Calendly account (free tier works). Set up two event types: "20-min Discovery Call" (for clients) and "45-min Engineer Intro Call" (for client-engineer meetings). Connect to CEO's Google Calendar. Link to Zoom. The URL will go in every outreach email.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Set up Toggl Track for engineer time tracking</div><div class="task-priority tp-normal">NORMAL</div></div>
+              <div class="task-detail">Free tool. Create workspace "Staffd." Engineers will log hours here once placed. Create project templates: one per client. This feeds the weekly output dashboard you'll send clients every Monday.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Set up Wave for invoicing</div><div class="task-priority tp-normal">NORMAL</div></div>
+              <div class="task-detail">waveapps.com — free. Create your business profile as Staffd LLC (use Wyoming LLC name once confirmed). Build a template invoice with: engineer name, role, period, monthly rate. You'll issue invoices on the 1st of each month. Practice running one dummy invoice today so you're not figuring it out with a real client.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eod">
+        <div class="eod-label">END OF DAY 1 TARGETS</div>
+        <div class="eod-targets">
+          <div class="eod-target ceo-t">Domain + email live</div>
+          <div class="eod-target ceo-t">LLC filed</div>
+          <div class="eod-target ceo-t">10 US messages sent</div>
+          <div class="eod-target coo-t">Notion databases built</div>
+          <div class="eod-target coo-t">20 engineer messages sent</div>
+          <div class="eod-target coo-t">Calendly live</div>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-block d2" id="day2">
+    <div class="day-header" onclick="toggleDay('day2')">
+      <div class="day-h-left">
+        <div class="day-num">02</div>
+        <div class="day-title-wrap">
+          <div class="day-label">TUESDAY · WEEK 1</div>
+          <div class="day-title">BUILD THE BENCH</div>
+        </div>
+      </div>
+      <div class="day-h-right">
+        <div class="day-badge db-ceo">CEO: 4 tasks</div>
+        <div class="day-badge db-coo">COO: 5 tasks</div>
+        <div class="day-chevron">▼</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="split-grid">
+        <div class="split-col ceo-col">
+          <div class="split-label ceo">CEO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Follow up on Day 1 US messages + send 10 more</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Anyone who replied to yesterday's message — respond within 2 hours. For positive replies, book a call via Calendly link immediately. Send 10 more outreach messages to new contacts today. By end of week you need 20 total sent.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Write the ROI one-pager</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">One page, PDF format. Sections: "The problem" (cost of hiring delay in weeks and dollars), "The Staffd model" (7 days, 4-stage vetting), "The numbers" (US salary vs Staffd rate, monthly savings), "The guarantee" (14-day trial, 7-day replacement, 60-day relentless). This goes in every follow-up email after a call. Keep it under 400 words. No stock photos.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Confirm at least 1 technical reviewer</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Follow up on yesterday's 5 messages. You need at least 1 confirmed today, 2 by end of week. If nobody has replied, message 5 more people. Do not move past Stage 1 vetting with candidates until you have a confirmed reviewer in place.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Write homepage hero copy</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Write the copy for the homepage in a Google Doc. COO needs this to build the site. Use the Hormozi framework: H1 = "Stop Interviewing. Start Shipping." Subheadline = "Pre-vetted Pakistani engineers, matched to your stack, deployed in 7 days. Or your money back." Three trust bullets below CTA. CEO writes copy, COO builds — never the other way around.</div>
+            </div>
+          </div>
+        </div>
+        <div class="split-col coo-col">
+          <div class="split-label coo">COO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Apply for Mercury bank account</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">mercury.com — apply using your Wyoming LLC documents (you'll get them in 3–5 days, so start the application now and upload docs when they arrive). Mercury is free, US-based, and designed for startups. This is where clients will wire money. Takes 2–3 days to approve after docs submitted.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Follow up on Day 1 engineer replies + send Ring 2 messages</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">
+                Respond to all Day 1 engineer replies. For interested engineers, send the Google Form link. Ring 2 = engineers from Wellfound, LinkedIn, and referrals. Message 20 more today:
+                <div class="script-snippet">
+                  <div class="script-label">RING 2 MESSAGE — LINKEDIN/WELLFOUND</div>
+                  "Hi [Name] — I came across your profile and your React/Node background is exactly what we're looking for. I run Staffd, a talent network connecting top Pakistani engineers with US seed-stage startups. It's a vetted bench model — you pass our process once, then we match you to clients. USD monthly retainer, fully remote. Worth a quick chat?"
+                </div>
+              </div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Build vetting email templates</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Write 4 email templates in Google Docs and save in Notion: (1) "Application received" auto-reply, (2) "You've passed Stage 1 — here's your comms call link", (3) "You've passed Stage 2 — here's your technical task", (4) "Congratulations — you're on the bench." These go out from ops@staffd.dev. Keep them brief, professional, and warm.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Set up Loom account</div><div class="task-priority tp-normal">NORMAL</div></div>
+              <div class="task-detail">loom.com — free tier. You'll use Loom for: engineer intro videos to clients, codebase walkthrough recordings when an engineer gets placed, weekly async updates. Record a 60-second test video today so you're comfortable with the tool before you need it with a real client.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Start Framer website build</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">framer.com — start with a blank canvas or a minimal template. Build only the homepage today. You don't need copy from CEO yet to set up the structure. Build the skeleton: nav, hero section placeholder, 3-step section, guarantee block, Calendly embed placeholder, footer. Copy goes in tomorrow when CEO has it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eod">
+        <div class="eod-label">END OF DAY 2 TARGETS</div>
+        <div class="eod-targets">
+          <div class="eod-target ceo-t">20 total US messages sent</div>
+          <div class="eod-target ceo-t">1 discovery call booked</div>
+          <div class="eod-target ceo-t">1 tech reviewer confirmed</div>
+          <div class="eod-target coo-t">Mercury application started</div>
+          <div class="eod-target coo-t">40+ engineers messaged total</div>
+          <div class="eod-target coo-t">Website skeleton started</div>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- DAYS 3-5 COMBINED -->
+  <div class="day-block" id="day35">
+    <div class="day-header" onclick="toggleDay('day35')">
+      <div class="day-h-left">
+        <div class="day-num">3–5</div>
+        <div class="day-title-wrap">
+          <div class="day-label">WED–FRI · WEEK 1</div>
+          <div class="day-title">VET & QUALIFY</div>
+        </div>
+      </div>
+      <div class="day-h-right">
+        <div class="day-badge db-ceo">CEO: ongoing</div>
+        <div class="day-badge db-coo">COO: pipeline focus</div>
+        <div class="day-chevron">▼</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="split-grid">
+        <div class="split-col ceo-col">
+          <div class="split-label ceo">CEO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Run all discovery calls that come in</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">Follow the discovery call script exactly. Goal is 3–5 calls this week. After each call: send the ROI one-pager within 2 hours, log the call outcome in Notion Client DB (Qualified / Not ready / Follow-up date), and send a personalised 2-line follow-up: "Great talking — based on what you told me about [their specific pain], I think [Engineer Name] from our bench could be exactly right. I'll send profiles tomorrow."</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Post first LinkedIn piece</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">
+                Write and post this LinkedIn post on Day 3:
+                <div class="script-snippet">
+                  <div class="script-label">LINKEDIN POST — DAY 3</div>
+                  "I spent 3 months watching seed founders burn runway trying to hire engineers they couldn't afford.<br><br>$150k+ salary. 6-8 week process. $20k recruiter fee. And still no guarantee the person can actually build.<br><br>So I built the alternative.<br><br>Pre-vetted React and Node.js engineers. Placed in 7 days. 14-day free trial. 60-day money-back guarantee.<br><br>Pakistan produces world-class engineers. The only thing missing was a process rigorous enough to prove it.<br><br>That's Staffd. If you're a seed founder in hiring hell right now — DM me. I'll tell you if we have someone right for your stack this week."
+                </div>
+                Do not edit this. Post it exactly. Resist the urge to make it "more professional."
+              </div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Review and approve engineer profiles as COO builds them</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">COO will send you draft engineer profile cards. Your job: check the English, check the GitHub links actually work, confirm the stack level matches what they claimed. Approve or return with notes. You need 4–5 approved profiles before you can show a client a bench.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Finalise US contractor agreement (MSA)</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Go to clerky.com or use a template from Docracy. You need: Master Services Agreement (what you provide, payment terms, IP ownership), Statement of Work template (per-engineer engagement), NDA. These don't need to be bespoke — template versions work for your first 3 clients. Have them ready before your first discovery call converts.</div>
+            </div>
+          </div>
+        </div>
+        <div class="split-col coo-col">
+          <div class="split-label coo">COO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Run Stage 1 CV reviews on all applicants</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">For every engineer who submits the Google Form: check their GitHub (look for real repos with commits, not forks of tutorials), check their LinkedIn timeline for gaps, check their live projects. Pass or fail. Log result in Notion Vetting Pipeline DB. Target: review all within 24 hours of submission. You're looking for real shipped code — if you can't find it in 5 minutes of looking, they fail.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Run Stage 2 communication calls on Stage 1 passes</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">
+                Book 45-min calls using your Calendly link. Run the communication assessment — this is scripted, you don't need technical knowledge:
+                <div class="script-snippet">
+                  <div class="script-label">COMMS ASSESSMENT SCRIPT (COO RUNS THIS)</div>
+                  "Tell me about the last project you shipped. What was your role?... Why did you make that technical decision?... Tell me about a time a client or manager wanted something you disagreed with — what did you do?... If your client sends you a Slack message at 9am EST saying the payments feature is broken, walk me through your next 30 minutes..."
+                </div>
+                Score: English clarity (1–5), Async writing test (send them a scenario via email, score their written reply), Confidence under pressure (1–5). Minimum pass: 4/5 average.
+              </div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Send Stage 3 technical tasks to Stage 2 passes</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Forward to your technical reviewer. The task: one real-world React/Node problem (e.g. "debug this broken component and explain your fix," "build a simple REST endpoint with auth middleware"). Give engineers 48 hours. Reviewer returns scores within 24 hours. You coordinate logistics — reviewer never speaks to the engineer.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Build engineer profile cards for Stage 2 passes</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">For every engineer who passes Stage 2 (before Stage 3 result): build their profile card. Format: professional photo, name, stack + years, English level (Fluent / Professional / Conversational), EST offset, 3-line bio in your own words, GitHub link, "Available from" date, monthly rate. This is what clients see. CEO reviews all cards before they go to clients.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Finish and publish Framer website</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">By end of Day 5: homepage live at staffd.dev. Minimum viable content: hero with H1 + CTA, 3-step how it works, guarantee block, Calendly embed. Don't wait for perfect. A live page with good copy beats a draft page with perfect design every time. You can iterate next week.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eod">
+        <div class="eod-label">END OF DAYS 3–5 TARGETS</div>
+        <div class="eod-targets">
+          <div class="eod-target ceo-t">3+ discovery calls done</div>
+          <div class="eod-target ceo-t">LinkedIn post live</div>
+          <div class="eod-target coo-t">8+ engineers in vetting pipeline</div>
+          <div class="eod-target coo-t">4+ profiles built</div>
+          <div class="eod-target coo-t">Website live</div>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- DAY 6-7 -->
+  <div class="day-block" id="day67">
+    <div class="day-header" onclick="toggleDay('day67')">
+      <div class="day-h-left">
+        <div class="day-num">6–7</div>
+        <div class="day-title-wrap">
+          <div class="day-label">WEEKEND · WEEK 1</div>
+          <div class="day-title">REVIEW & RELOAD</div>
+        </div>
+      </div>
+      <div class="day-h-right">
+        <div class="day-badge db-ceo">CEO: review + plan</div>
+        <div class="day-badge db-coo">COO: systems audit</div>
+        <div class="day-chevron">▼</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="split-grid">
+        <div class="split-col ceo-col">
+          <div class="split-label ceo">CEO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Week 1 debrief — what's working, what's not</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Spend 60 minutes with COO reviewing: How many US contacts replied? What objections came up? How many engineers are in the pipeline? What's the biggest bottleneck? Write down 3 things to do differently in Week 2. Log this in Notion.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Follow up on all open discovery call leads</div><div class="task-priority tp-critical">CRITICAL</div></div>
+              <div class="task-detail">
+                Anyone who took a call but hasn't committed — send this follow-up:
+                <div class="script-snippet">
+                  <div class="script-label">FOLLOW-UP EMAIL — POST CALL</div>
+                  Subject: React engineer for [Company] — available this week<br><br>"Hey [Name] — great talking. Based on what you described about [their specific pain], I pulled [Engineer Name] from our bench — [2 lines on their background and why they match]. Profile attached. Would a 45-min intro call work this week? Here's my Calendly: [link]"
+                </div>
+              </div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Plan Week 2 outreach targets</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Identify 30 more US founders to contact in Week 2. Sources: Wellfound seed stage filter, YC company directory (ycombinator.com/companies → filter "Hiring"), LinkedIn "seed stage CTO" search, your existing warm network second-degree connections. Log all 30 in Notion Client DB with status "To contact."</div>
+            </div>
+          </div>
+        </div>
+        <div class="split-col coo-col">
+          <div class="split-label coo">COO TASKS</div>
+          <div class="task-list">
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Audit all 4 Notion databases</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Every engineer who submitted an application should be in the Vetting Pipeline DB with a current stage and status. Every US contact CEO reached out to should be in the Client DB. Run through both databases and fill in any gaps. The databases are only useful if they're complete.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Complete Pakistani contractor agreements for bench engineers</div><div class="task-priority tp-high">HIGH</div></div>
+              <div class="task-detail">Any engineer who has passed Stage 3 or 4 this week needs a signed Pakistani contractor agreement before they go on the bench. Template should include: IP assignment (all code written for clients belongs to the client), confidentiality clause, non-solicitation (can't go direct to clients), payment terms. Get this to a local lawyer for PKR 15,000 or use a reputable template.</div>
+            </div>
+            <div class="task" onclick="toggleTask(this)">
+              <div class="task-header"><div class="task-cb"></div><div class="task-title">Write the SOP for weekly operations</div><div class="task-priority tp-normal">NORMAL</div></div>
+              <div class="task-detail">In Notion, write the Standard Operating Procedure for the recurring weekly tasks: Monday (send output dashboards), Wednesday (pulse check with all active engineers), Friday (sprint review check-in with clients). Even if you have no placed engineers yet — write it now so it exists when you do. You should be able to hand this SOP to someone else and they could run it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="eod">
+        <div class="eod-label">END OF WEEK 1 — NON-NEGOTIABLE OUTCOMES</div>
+        <div class="eod-targets">
+          <div class="eod-target ceo-t">20+ US founders contacted</div>
+          <div class="eod-target ceo-t">3+ discovery calls completed</div>
+          <div class="eod-target ceo-t">Wyoming LLC filed</div>
+          <div class="eod-target coo-t">8+ engineers in vetting pipeline</div>
+          <div class="eod-target coo-t">Website live at staffd.dev</div>
+          <div class="eod-target coo-t">All 4 Notion DBs populated</div>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleDay(id){
+  const block=document.getElementById(id);
+  block.classList.toggle('open');
+}
+function toggleTask(el){
+  el.classList.toggle('expanded');
+}
+// open day1 by default — already done in HTML
+</script>
+</body>
+</html>
+
+

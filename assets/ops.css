@@ -1,0 +1,84 @@
+/* Ops / internal doc pages */
+body { min-height: 100vh; }
+.page { max-width: 960px; margin: 0 auto; padding: 60px 2rem 120px; }
+
+.pg-header { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.pg-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pg-kicker::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.pg-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+.pg-h1 em { font-style: normal; color: var(--accent); }
+.pg-sub { font-size: 15px; color: var(--text2); line-height: 1.7; max-width: 640px; font-weight: 300; }
+.pg-sub strong { color: var(--text); font-weight: 500; }
+
+.meta-row { display: flex; gap: 24px; margin-top: 1.5rem; flex-wrap: wrap; }
+.meta-pill {
+  font-size: 11px;
+  color: var(--text3);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px 12px;
+  letter-spacing: 0.06em;
+}
+
+hr.div,
+hr.divider-ops {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+.phase-header,
+.day-header { font-family: var(--font-display); }
+
+/* Sales deck fullscreen */
+body.deck-page,
+html.deck-page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.ops-hub {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 100px 2rem 4rem;
+}
+.ops-hub h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.ops-hub > p { color: var(--text2); margin-bottom: 2.5rem; }
+.ops-cards { display: flex; flex-direction: column; gap: 12px; }
+.ops-card {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.ops-card:hover { border-color: var(--accent); }
+.ops-card-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.ops-card-desc { font-size: 14px; color: var(--text2); }

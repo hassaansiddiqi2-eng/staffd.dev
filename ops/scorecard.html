@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staffd.dev — Vetting Scorecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<link rel="stylesheet" href="../assets/ops.css">
+<link rel="stylesheet" href="../assets/ops-scorecard.css">
+</head>
+<body>
+<a href="../index.html" class="ops-back">← staffd.dev</a>
+
+<div class="page">
+
+  <div class="pg-kicker">STAFFD.DEV · TALENT OPS</div>
+  <h1 class="pg-h1">VETTING<br><em>SCORECARD</em></h1>
+  <p class="pg-sub">Complete one scorecard per candidate. All four stages must be completed in order. <strong>Minimum pass score per stage applies before advancing.</strong> Final recommendation auto-calculates from stage totals.</p>
+
+  <!-- CANDIDATE INFO -->
+  <div class="candidate-card">
+    <div class="card-title">CANDIDATE INFORMATION</div>
+    <div class="field-grid">
+      <div class="field"><label>Full Name</label><input type="text" id="c-name" placeholder="Engineer full name"></div>
+      <div class="field"><label>Email</label><input type="text" id="c-email" placeholder="candidate@email.com"></div>
+      <div class="field"><label>GitHub URL</label><input type="text" id="c-github" placeholder="github.com/username"></div>
+      <div class="field"><label>Primary Stack</label>
+        <select id="c-stack">
+          <option value="">Select stack</option>
+          <option>React / Frontend</option>
+          <option>Node.js / Backend</option>
+          <option>Full-Stack (React + Node)</option>
+          <option>Python / Django</option>
+          <option>React Native</option>
+          <option>QA Engineer</option>
+          <option>DevOps / AWS</option>
+        </select>
+      </div>
+      <div class="field"><label>Years Experience</label>
+        <select id="c-exp">
+          <option value="">Select level</option>
+          <option>1–3 years (Junior)</option>
+          <option>3–6 years (Mid)</option>
+          <option>6+ years (Senior)</option>
+        </select>
+      </div>
+      <div class="field"><label>Requested Rate (USD/mo)</label><input type="text" id="c-rate" placeholder="e.g. $4,500"></div>
+      <div class="field"><label>Availability</label>
+        <select id="c-avail">
+          <option value="">Select</option>
+          <option>Immediately available</option>
+          <option>Available in 1 week</option>
+          <option>Available in 2 weeks</option>
+          <option>Available in 1 month</option>
+        </select>
+      </div>
+      <div class="field"><label>Referred By</label><input type="text" id="c-ref" placeholder="Source / referrer"></div>
+      <div class="field"><label>Assessed By (COO)</label><input type="text" id="c-assessor" placeholder="Your name"></div>
+    </div>
+  </div>
+
+  <!-- STAGE 1 -->
+  <div class="stage s1 open" id="stage1">
+    <div class="stage-header" onclick="toggleStage('stage1')">
+      <div class="stage-num">01</div>
+      <div class="stage-meta">
+        <div class="stage-name">CV + GITHUB AUDIT</div>
+        <div class="stage-desc">ASYNC · 30 MIN REVIEW · PASS THRESHOLD: 16/25</div>
+      </div>
+      <div class="stage-score-display" id="s1-display" style="color:var(--accent)">—</div>
+      <div class="stage-pass-badge" id="s1-badge"></div>
+      <div class="stage-chevron">▼</div>
+    </div>
+    <div class="stage-body">
+      <div class="criteria-section">
+        <div class="criteria-section-title">CODE QUALITY SIGNALS</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Real shipped code in production</div>
+            <div class="criterion-desc">Evidence of deployed apps, live URLs, real user-facing features. <strong>Not tutorials, not forks, not "personal projects" with 1 commit.</strong> You need to find something users touched.</div>
+          </div>
+          <div class="score-btns" data-stage="1" data-key="s1k1">
+            <button class="score-btn" onclick="score(this,1,'s1k1',1)">1</button>
+            <button class="score-btn" onclick="score(this,1,'s1k1',2)">2</button>
+            <button class="score-btn" onclick="score(this,1,'s1k1',3)">3</button>
+            <button class="score-btn" onclick="score(this,1,'s1k1',4)">4</button>
+            <button class="score-btn" onclick="score(this,1,'s1k1',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">GitHub commit history depth</div>
+            <div class="criterion-desc">Look at commit messages — are they meaningful ("fix auth middleware token expiry bug") or lazy ("update", "fix", "changes")? <strong>Commit message quality predicts async communication quality.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,1,'s1k2',1)">1</button>
+            <button class="score-btn" onclick="score(this,1,'s1k2',2)">2</button>
+            <button class="score-btn" onclick="score(this,1,'s1k2',3)">3</button>
+            <button class="score-btn" onclick="score(this,1,'s1k2',4)">4</button>
+            <button class="score-btn" onclick="score(this,1,'s1k2',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Code organisation and README quality</div>
+            <div class="criterion-desc">Does their repo have a README? Is it useful? Is the folder structure logical? <strong>Engineers who document for others are engineers who communicate with clients.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,1,'s1k3',1)">1</button>
+            <button class="score-btn" onclick="score(this,1,'s1k3',2)">2</button>
+            <button class="score-btn" onclick="score(this,1,'s1k3',3)">3</button>
+            <button class="score-btn" onclick="score(this,1,'s1k3',4)">4</button>
+            <button class="score-btn" onclick="score(this,1,'s1k3',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-section">
+        <div class="criteria-section-title">EXPERIENCE SIGNALS</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Employment timeline consistency</div>
+            <div class="criterion-desc">Are there unexplained gaps? Do the dates on LinkedIn match the CV? <strong>Short stints (under 6 months) at multiple employers is a yellow flag — ask about each one.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,1,'s1k4',1)">1</button>
+            <button class="score-btn" onclick="score(this,1,'s1k4',2)">2</button>
+            <button class="score-btn" onclick="score(this,1,'s1k4',3)">3</button>
+            <button class="score-btn" onclick="score(this,1,'s1k4',4)">4</button>
+            <button class="score-btn" onclick="score(this,1,'s1k4',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Stack depth vs stated level</div>
+            <div class="criterion-desc">Does their GitHub actually show 4+ years of React experience if they claim senior? Or is it Surface-level usage of frameworks? <strong>Self-reported seniority is often inflated by 1 level.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,1,'s1k5',1)">1</button>
+            <button class="score-btn" onclick="score(this,1,'s1k5',2)">2</button>
+            <button class="score-btn" onclick="score(this,1,'s1k5',3)">3</button>
+            <button class="score-btn" onclick="score(this,1,'s1k5',4)">4</button>
+            <button class="score-btn" onclick="score(this,1,'s1k5',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="pass-threshold">
+        <div class="pt-text"><strong>Pass threshold: 16 / 25</strong> — candidates scoring below 16 are rejected at Stage 1. No exceptions.</div>
+        <div style="font-family:var(--font-body);font-size:11px;color:var(--text3)">SCORES: 1=Absent · 2=Weak · 3=Average · 4=Strong · 5=Exceptional</div>
+      </div>
+      <div class="stage-total-row">
+        <div class="stl">Stage 1 Total</div>
+        <div class="stage-total-num" id="s1-total" style="color:var(--accent)">0</div>
+        <div class="stage-total-max">/ 25</div>
+        <div class="stage-decision">
+          <button class="decision-btn btn-pass" id="s1-pass" onclick="setDecision(1,'pass')">PASS →</button>
+          <button class="decision-btn btn-fail" id="s1-fail" onclick="setDecision(1,'fail')">FAIL ✕</button>
+        </div>
+      </div>
+      <div class="notes-field" style="margin-top:16px">
+        <label>Stage 1 Notes</label>
+        <textarea id="s1-notes" placeholder="Key observations, red flags, links to specific repos or commits worth noting..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2 -->
+  <div class="stage s2" id="stage2">
+    <div class="stage-header" onclick="toggleStage('stage2')">
+      <div class="stage-num">02</div>
+      <div class="stage-meta">
+        <div class="stage-name">COMMUNICATION INTERVIEW</div>
+        <div class="stage-desc">LIVE CALL · 45 MIN · PASS THRESHOLD: 20/30</div>
+      </div>
+      <div class="stage-score-display" id="s2-display" style="color:var(--cyan)">—</div>
+      <div class="stage-pass-badge" id="s2-badge"></div>
+      <div class="stage-chevron">▼</div>
+    </div>
+    <div class="stage-body">
+      <div class="criteria-section">
+        <div class="criteria-section-title">VERBAL ENGLISH</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Spoken English fluency</div>
+            <div class="criterion-desc">Can you understand every sentence without effort? <strong>5 = native-level or near. 4 = occasional accent, fully understandable. 3 = understandable but requires focus. 2 = frequently unclear. 1 = hard to follow.</strong> US clients will be on video calls with this person weekly.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,2,'s2k1',1)">1</button>
+            <button class="score-btn" onclick="score(this,2,'s2k1',2)">2</button>
+            <button class="score-btn" onclick="score(this,2,'s2k1',3)">3</button>
+            <button class="score-btn" onclick="score(this,2,'s2k1',4)">4</button>
+            <button class="score-btn" onclick="score(this,2,'s2k1',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Technical explanation clarity</div>
+            <div class="criterion-desc">Ask: "Walk me through a technical decision you made recently." <strong>Can they explain the tradeoff clearly without jargon overload? Do they check for understanding?</strong> This predicts how well they'll communicate blockers to a non-technical founder.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,2,'s2k2',1)">1</button>
+            <button class="score-btn" onclick="score(this,2,'s2k2',2)">2</button>
+            <button class="score-btn" onclick="score(this,2,'s2k2',3)">3</button>
+            <button class="score-btn" onclick="score(this,2,'s2k2',4)">4</button>
+            <button class="score-btn" onclick="score(this,2,'s2k2',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-section">
+        <div class="criteria-section-title">ASYNC & WRITTEN COMMUNICATION</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Async writing test — Slack update quality</div>
+            <div class="criterion-desc">Send this scenario via email before the call: <em>"You're 2 days into a feature. You've hit a blocker — the third-party payment API is returning a 403 you can't explain. Write the Slack message you'd send your client."</em><br><strong>5 = specific, explains what was tried, gives a plan and ETA. 1 = "blocked, will update later."</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,2,'s2k3',1)">1</button>
+            <button class="score-btn" onclick="score(this,2,'s2k3',2)">2</button>
+            <button class="score-btn" onclick="score(this,2,'s2k3',3)">3</button>
+            <button class="score-btn" onclick="score(this,2,'s2k3',4)">4</button>
+            <button class="score-btn" onclick="score(this,2,'s2k3',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Proactive communication instinct</div>
+            <div class="criterion-desc">Ask: "Tell me about a time something went wrong on a project. When did you tell your manager/client?" <strong>Proactive communicators tell before they're asked. Reactive communicators wait until it's unavoidable.</strong> You want the former.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,2,'s2k4',1)">1</button>
+            <button class="score-btn" onclick="score(this,2,'s2k4',2)">2</button>
+            <button class="score-btn" onclick="score(this,2,'s2k4',3)">3</button>
+            <button class="score-btn" onclick="score(this,2,'s2k4',4)">4</button>
+            <button class="score-btn" onclick="score(this,2,'s2k4',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-section">
+        <div class="criteria-section-title">PROFESSIONAL MATURITY</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Handling disagreement professionally</div>
+            <div class="criterion-desc">Ask: "A founder tells you to build X. You think it's the wrong approach. What do you do?" <strong>Red flag: "I just build what I'm told." Red flag: "I'd argue until they agreed." Green flag: structured pushback with alternatives, then deference to their decision.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,2,'s2k5',1)">1</button>
+            <button class="score-btn" onclick="score(this,2,'s2k5',2)">2</button>
+            <button class="score-btn" onclick="score(this,2,'s2k5',3)">3</button>
+            <button class="score-btn" onclick="score(this,2,'s2k5',4)">4</button>
+            <button class="score-btn" onclick="score(this,2,'s2k5',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Self-awareness about skill gaps</div>
+            <div class="criterion-desc">Ask: "What's a technology in your stack you feel weakest in right now?" <strong>Engineers who can't answer this are either dishonest or lack self-awareness — both are dangerous. Engineers with honest, specific answers are safe to match.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,2,'s2k6',1)">1</button>
+            <button class="score-btn" onclick="score(this,2,'s2k6',2)">2</button>
+            <button class="score-btn" onclick="score(this,2,'s2k6',3)">3</button>
+            <button class="score-btn" onclick="score(this,2,'s2k6',4)">4</button>
+            <button class="score-btn" onclick="score(this,2,'s2k6',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="pass-threshold">
+        <div class="pt-text"><strong>Pass threshold: 20 / 30.</strong> Any individual criterion below 3 triggers a review conversation — even if total score passes.</div>
+      </div>
+      <div class="stage-total-row">
+        <div class="stl">Stage 2 Total</div>
+        <div class="stage-total-num" id="s2-total" style="color:var(--cyan)">0</div>
+        <div class="stage-total-max">/ 30</div>
+        <div class="stage-decision">
+          <button class="decision-btn btn-pass" id="s2-pass" onclick="setDecision(2,'pass')">PASS →</button>
+          <button class="decision-btn btn-fail" id="s2-fail" onclick="setDecision(2,'fail')">FAIL ✕</button>
+        </div>
+      </div>
+      <div class="notes-field" style="margin-top:16px">
+        <label>Stage 2 Notes — paste their written async response here</label>
+        <textarea id="s2-notes" placeholder="Paste their written Slack update test response here. Note any specific phrases or flags from the live call..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3 -->
+  <div class="stage s3" id="stage3">
+    <div class="stage-header" onclick="toggleStage('stage3')">
+      <div class="stage-num">03</div>
+      <div class="stage-meta">
+        <div class="stage-name">TECHNICAL ASSESSMENT</div>
+        <div class="stage-desc">ASYNC · 48HR TASK · SCORED BY TECHNICAL REVIEWER · PASS THRESHOLD: 28/40</div>
+      </div>
+      <div class="stage-score-display" id="s3-display" style="color:var(--orange)">—</div>
+      <div class="stage-pass-badge" id="s3-badge"></div>
+      <div class="stage-chevron">▼</div>
+    </div>
+    <div class="stage-body">
+      <div class="criteria-section">
+        <div class="criteria-section-title">PROBLEM SOLVING</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Correct solution to primary task</div>
+            <div class="criterion-desc">Did they solve the actual problem set? <strong>Reviewer grades: 5 = complete + elegant. 4 = complete, some inefficiency. 3 = mostly correct, minor gaps. 2 = partially correct. 1 = incorrect or incomplete.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k1',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k1',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k1',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k1',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k1',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Edge cases and error handling</div>
+            <div class="criterion-desc">Did they handle null values, empty states, API failures? <strong>Senior engineers think about what breaks. Juniors think about the happy path.</strong> This criterion separates levels more than anything else.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k2',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k2',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k2',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k2',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k2',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Written reasoning quality</div>
+            <div class="criterion-desc">Did they explain their approach? <strong>We ask candidates to write a brief explanation of their solution. This doubles as a communication test.</strong> The explanation matters as much as the code.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k3',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k3',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k3',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k3',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k3',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-section">
+        <div class="criteria-section-title">CODE QUALITY</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Code readability and naming</div>
+            <div class="criterion-desc">Would another developer understand this code without asking questions? <strong>Variable names, function names, structure. Code that reads like English is code that scales in a team environment.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k4',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k4',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k4',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k4',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k4',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Appropriate use of patterns</div>
+            <div class="criterion-desc">Did they use React hooks correctly? Avoid unnecessary re-renders? Separate concerns properly? <strong>Reviewer checks for anti-patterns: prop drilling, useEffect abuse, massive components, hardcoded values.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k5',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k5',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k5',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k5',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k5',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Performance awareness</div>
+            <div class="criterion-desc">Did they think about performance? Memo, callbacks, avoiding unnecessary renders? <strong>Not required at Junior level — but at Mid and Senior it's expected. Reviewer adjusts this score against the stated level.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k6',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k6',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k6',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k6',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k6',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Testing consideration</div>
+            <div class="criterion-desc">Did they write tests, or at minimum acknowledge they would? <strong>Even a comment like "// I'd add Jest unit tests here for X" shows the right instinct. Zero mention of testing is a yellow flag at Senior level.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k7',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k7',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k7',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k7',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k7',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-section">
+        <div class="criteria-section-title">REVIEWER CONFIDENCE</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Technical reviewer overall confidence</div>
+            <div class="criterion-desc">Reviewer's gut: <strong>"Would I want this person in my team?" 5 = Yes, immediately. 4 = Yes with minor reservations. 3 = Neutral. 2 = Hesitant. 1 = No.</strong> This is the reviewer's subjective summary — weight it heavily.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,3,'s3k8',1)">1</button>
+            <button class="score-btn" onclick="score(this,3,'s3k8',2)">2</button>
+            <button class="score-btn" onclick="score(this,3,'s3k8',3)">3</button>
+            <button class="score-btn" onclick="score(this,3,'s3k8',4)">4</button>
+            <button class="score-btn" onclick="score(this,3,'s3k8',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="pass-threshold">
+        <div class="pt-text"><strong>Pass threshold: 28 / 40.</strong> Reviewer fills this scorecard. COO reviews and confirms. Technical reviewer fee: PKR 4,000 on confirmation of pass/fail.</div>
+      </div>
+      <div class="stage-total-row">
+        <div class="stl">Stage 3 Total</div>
+        <div class="stage-total-num" id="s3-total" style="color:var(--orange)">0</div>
+        <div class="stage-total-max">/ 40</div>
+        <div class="stage-decision">
+          <button class="decision-btn btn-pass" id="s3-pass" onclick="setDecision(3,'pass')">PASS →</button>
+          <button class="decision-btn btn-fail" id="s3-fail" onclick="setDecision(3,'fail')">FAIL ✕</button>
+        </div>
+      </div>
+      <div class="notes-field" style="margin-top:16px">
+        <label>Stage 3 Notes — Reviewer Feedback</label>
+        <textarea id="s3-notes" placeholder="Paste reviewer's written feedback here. Note specific strengths, specific weaknesses, and any patterns to flag..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 4 -->
+  <div class="stage s4" id="stage4">
+    <div class="stage-header" onclick="toggleStage('stage4')">
+      <div class="stage-num">04</div>
+      <div class="stage-meta">
+        <div class="stage-name">LIVE CODING INTERVIEW</div>
+        <div class="stage-desc">LIVE · 60 MIN · SENIOR ENGINEER RUNS THIS · PASS THRESHOLD: 20/30</div>
+      </div>
+      <div class="stage-score-display" id="s4-display" style="color:var(--accent)">—</div>
+      <div class="stage-pass-badge" id="s4-badge"></div>
+      <div class="stage-chevron">▼</div>
+    </div>
+    <div class="stage-body">
+      <div class="criteria-section">
+        <div class="criteria-section-title">LIVE BUILD QUALITY</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Initial approach and planning</div>
+            <div class="criterion-desc">Before writing a line of code, did they ask clarifying questions? Did they outline their approach? <strong>Engineers who plan before typing produce better code and have better client relationships.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,4,'s4k1',1)">1</button>
+            <button class="score-btn" onclick="score(this,4,'s4k1',2)">2</button>
+            <button class="score-btn" onclick="score(this,4,'s4k1',3)">3</button>
+            <button class="score-btn" onclick="score(this,4,'s4k1',4)">4</button>
+            <button class="score-btn" onclick="score(this,4,'s4k1',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Code quality under time pressure</div>
+            <div class="criterion-desc">Live conditions reveal real habits. <strong>Do they revert to messy code when stressed, or maintain standards? The way they code in an interview is the floor — real work will be at or above this level.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,4,'s4k2',1)">1</button>
+            <button class="score-btn" onclick="score(this,4,'s4k2',2)">2</button>
+            <button class="score-btn" onclick="score(this,4,'s4k2',3)">3</button>
+            <button class="score-btn" onclick="score(this,4,'s4k2',4)">4</button>
+            <button class="score-btn" onclick="score(this,4,'s4k2',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Task completion within 60 minutes</div>
+            <div class="criterion-desc">Did they get to a working solution? <strong>Partial completion is not a failure if their process was strong and they communicated clearly about trade-offs. A complete but poorly explained solution scores lower than a partial but well-narrated one.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,4,'s4k3',1)">1</button>
+            <button class="score-btn" onclick="score(this,4,'s4k3',2)">2</button>
+            <button class="score-btn" onclick="score(this,4,'s4k3',3)">3</button>
+            <button class="score-btn" onclick="score(this,4,'s4k3',4)">4</button>
+            <button class="score-btn" onclick="score(this,4,'s4k3',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="criteria-section">
+        <div class="criteria-section-title">THINKING PROCESS</div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Narration when stuck</div>
+            <div class="criterion-desc">When they hit a wall, do they go silent or narrate their thinking? <strong>"I'm going to try X because Y... actually that won't work because Z, let me try A instead" is exactly what a remote team needs to see.</strong> Silence is disqualifying.</div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,4,'s4k4',1)">1</button>
+            <button class="score-btn" onclick="score(this,4,'s4k4',2)">2</button>
+            <button class="score-btn" onclick="score(this,4,'s4k4',3)">3</button>
+            <button class="score-btn" onclick="score(this,4,'s4k4',4)">4</button>
+            <button class="score-btn" onclick="score(this,4,'s4k4',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Response to mid-session correction</div>
+            <div class="criterion-desc">Interviewer introduces a deliberate constraint halfway through ("actually the client wants this to be reusable across 3 components"). <strong>Good engineers adapt without frustration. Great engineers say "good catch" and pivot cleanly.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,4,'s4k5',1)">1</button>
+            <button class="score-btn" onclick="score(this,4,'s4k5',2)">2</button>
+            <button class="score-btn" onclick="score(this,4,'s4k5',3)">3</button>
+            <button class="score-btn" onclick="score(this,4,'s4k5',4)">4</button>
+            <button class="score-btn" onclick="score(this,4,'s4k5',5)">5</button>
+          </div>
+        </div>
+        <div class="criterion">
+          <div class="criterion-info">
+            <div class="criterion-name">Post-build reflection quality</div>
+            <div class="criterion-desc">At the end: "If you had another hour, what would you improve?" <strong>Engineers who can self-critique accurately are engineers who grow. Engineers who say "nothing, it's fine" are engineers who plateau.</strong></div>
+          </div>
+          <div class="score-btns">
+            <button class="score-btn" onclick="score(this,4,'s4k6',1)">1</button>
+            <button class="score-btn" onclick="score(this,4,'s4k6',2)">2</button>
+            <button class="score-btn" onclick="score(this,4,'s4k6',3)">3</button>
+            <button class="score-btn" onclick="score(this,4,'s4k6',4)">4</button>
+            <button class="score-btn" onclick="score(this,4,'s4k6',5)">5</button>
+          </div>
+        </div>
+      </div>
+      <div class="pass-threshold">
+        <div class="pt-text"><strong>Pass threshold: 20 / 30.</strong> Any candidate scoring below 3 on "Narration when stuck" is automatically rejected regardless of total score.</div>
+      </div>
+      <div class="stage-total-row">
+        <div class="stl">Stage 4 Total</div>
+        <div class="stage-total-num" id="s4-total" style="color:var(--accent)">0</div>
+        <div class="stage-total-max">/ 30</div>
+        <div class="stage-decision">
+          <button class="decision-btn btn-pass" id="s4-pass" onclick="setDecision(4,'pass')">PASS →</button>
+          <button class="decision-btn btn-fail" id="s4-fail" onclick="setDecision(4,'fail')">FAIL ✕</button>
+        </div>
+      </div>
+      <div class="notes-field" style="margin-top:16px">
+        <label>Stage 4 Notes — Interviewer Observations</label>
+        <textarea id="s4-notes" placeholder="Note specific moments: when they got stuck and how they handled it, the correction response, the self-critique quality..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL RECOMMENDATION -->
+  <div class="final-card">
+    <div class="fc-title">FINAL RECOMMENDATION</div>
+    <div class="fc-scores">
+      <div class="fc-score"><div class="fc-score-num" id="fc-s1" style="color:var(--accent)">—</div><div class="fc-score-label">Stage 1 / 25</div></div>
+      <div class="fc-score"><div class="fc-score-num" id="fc-s2" style="color:var(--cyan)">—</div><div class="fc-score-label">Stage 2 / 30</div></div>
+      <div class="fc-score"><div class="fc-score-num" id="fc-s3" style="color:var(--orange)">—</div><div class="fc-score-label">Stage 3 / 40</div></div>
+      <div class="fc-score"><div class="fc-score-num" id="fc-s4" style="color:var(--accent)">—</div><div class="fc-score-label">Stage 4 / 30</div></div>
+    </div>
+    <div class="overall-score">
+      <div>
+        <div class="os-label">TOTAL SCORE</div>
+        <div class="os-num" id="os-num" style="color:var(--text3)">—</div>
+      </div>
+      <div class="os-verdict" id="os-verdict">
+        <div class="verdict-tier" id="v-tier">—</div>
+        <div class="verdict-desc" id="v-desc">Complete all four stages to see the final recommendation.</div>
+      </div>
+    </div>
+    <div class="recommendation-btns">
+      <button class="rec-btn rec-bench" onclick="setRec('bench')">✓ ADD TO BENCH</button>
+      <button class="rec-btn rec-hold" onclick="setRec('hold')">⏸ HOLD — RE-EVALUATE</button>
+      <button class="rec-btn rec-reject" onclick="setRec('reject')">✕ REJECT</button>
+    </div>
+    <div class="notes-field" style="margin-top:16px">
+      <label>Final Notes — For the client profile card</label>
+      <textarea id="final-notes" placeholder="Write the 2-3 sentence summary that will appear on this engineer's client-facing profile card. Be specific about strengths and ideal match type..."></textarea>
+    </div>
+    <div class="actions">
+      <button class="action-btn primary" onclick="window.print()">PRINT / SAVE PDF</button>
+      <button class="action-btn" onclick="copyScorecard()">COPY SUMMARY</button>
+      <button class="action-btn" onclick="resetAll()">RESET FORM</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const scores={};
+const stageTotals={1:0,2:0,3:0,4:0};
+const stageMaxes={1:25,2:30,3:40,4:30};
+const stageThresholds={1:16,2:20,3:28,4:20};
+
+function score(btn,stage,key,val){
+  // deselect siblings
+  btn.closest('.score-btns').querySelectorAll('.score-btn').forEach(b=>{
+    b.className='score-btn';
+  });
+  btn.classList.add('selected-'+val);
+  scores[key]=val;
+  recalcStage(stage);
+}
+
+function recalcStage(stage){
+  const keys=Object.keys(scores).filter(k=>k.startsWith('s'+stage+'k'));
+  const total=keys.reduce((acc,k)=>acc+(scores[k]||0),0);
+  stageTotals[stage]=total;
+  document.getElementById('s'+stage+'-total').textContent=total;
+  document.getElementById('s'+stage+'-display').textContent=total+'/'+stageMaxes[stage];
+  updateFinal();
+}
+
+function setDecision(stage,decision){
+  document.getElementById('s'+stage+'-pass').classList.toggle('active',decision==='pass');
+  document.getElementById('s'+stage+'-fail').classList.toggle('active',decision==='fail');
+  const badge=document.getElementById('s'+stage+'-badge');
+  badge.style.display='inline-block';
+  badge.textContent=decision==='pass'?'PASS':'FAIL';
+  badge.className='stage-pass-badge '+(decision==='pass'?'badge-pass':'badge-fail');
+}
+
+function updateFinal(){
+  const total=Object.values(stageTotals).reduce((a,b)=>a+b,0);
+  const max=125;
+  document.getElementById('os-num').textContent=total;
+  document.getElementById('fc-s1').textContent=stageTotals[1];
+  document.getElementById('fc-s2').textContent=stageTotals[2];
+  document.getElementById('fc-s3').textContent=stageTotals[3];
+  document.getElementById('fc-s4').textContent=stageTotals[4];
+  const pct=total/max;
+  let tier,desc,color;
+  if(pct>=0.88){tier='TIER 1 — BENCH READY';desc='Exceptional candidate. Match immediately to high-value clients. Flag as premium talent.';color='var(--accent)'}
+  else if(pct>=0.74){tier='TIER 2 — STRONG CANDIDATE';desc='Strong candidate. Add to bench. Match to mid-complexity clients and seed-stage teams.';color='var(--cyan)'}
+  else if(pct>=0.60){tier='TIER 3 — CONDITIONAL PASS';desc='Passes threshold. Add to bench with notes on specific areas to monitor. Pair with structured client onboarding.';color='var(--orange)'}
+  else{tier='DOES NOT PASS';desc='Does not meet minimum threshold. Send rejection email within 24 hours. Log reason in Notion.';color='var(--red)'}
+  document.getElementById('os-num').style.color=color;
+  document.getElementById('v-tier').textContent=tier;
+  document.getElementById('v-tier').style.color=color;
+  document.getElementById('v-desc').textContent=desc;
+}
+
+function setRec(rec){
+  document.querySelectorAll('.rec-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.rec-'+rec).classList.add('active');
+}
+
+function toggleStage(id){
+  document.getElementById(id).classList.toggle('open');
+}
+
+function copyScorecard(){
+  const name=document.getElementById('c-name').value||'[Candidate]';
+  const stack=document.getElementById('c-stack').value||'[Stack]';
+  const total=Object.values(stageTotals).reduce((a,b)=>a+b,0);
+  const text=`STAFFD VETTING SCORECARD
+Candidate: ${name} | Stack: ${stack}
+Stage 1 (CV): ${stageTotals[1]}/25 | Stage 2 (Comms): ${stageTotals[2]}/30 | Stage 3 (Tech): ${stageTotals[3]}/40 | Stage 4 (Live): ${stageTotals[4]}/30
+Total: ${total}/125
+Notes: ${document.getElementById('final-notes').value||'—'}`;
+  navigator.clipboard.writeText(text).then(()=>alert('Scorecard summary copied to clipboard'));
+}
+
+function resetAll(){
+  if(!confirm('Reset all scores? This cannot be undone.'))return;
+  location.reload();
+}
+</script>
+</body>
+</html>
+
+

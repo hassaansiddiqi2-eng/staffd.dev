@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staffd.dev — Sales Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<link rel="stylesheet" href="../assets/ops.css">
+<link rel="stylesheet" href="../assets/ops-sales-deck.css">
+</head>
+<body>
+<a href="../index.html" class="ops-back">← staffd.dev</a>
+
+
+<div class="deck">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="tb-logo">STAFFD<span>.</span>DEV</div>
+    <div class="tb-center" id="slide-title">INTRO</div>
+    <div class="tb-nav">
+      <button class="tb-btn" onclick="prev()">← PREV</button>
+      <span class="slide-counter" id="counter">1 / 10</span>
+      <button class="tb-btn" onclick="next()">NEXT →</button>
+      <button class="tb-btn primary" onclick="next()">BOOK CALL</button>
+    </div>
+  </div>
+
+  <!-- SLIDES -->
+  <div class="slides-wrap">
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide active slide-inner s-cover" id="s1">
+      <div class="s-cover-glow"></div>
+      <div class="s-cover-tag">● CONFIDENTIAL · STAFFD.DEV · 2025</div>
+      <h1>ELITE<br><em>ENGINEERS.</em><br>7 DAYS.</h1>
+      <p class="s-cover-sub">Pre-vetted React & Node.js engineers from Pakistan, placed into US seed-stage teams within 7 days.<br><br><strong>Guaranteed to ship code — or you pay nothing.</strong></p>
+      <div class="big-accent">01</div>
+    </div>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <div class="slide slide-inner s-two" id="s2">
+      <div class="s-col">
+        <div class="s-eyebrow">THE SITUATION</div>
+        <div class="s-h">YOUR<br>HIRING<br><em>IS BROKEN.</em></div>
+        <p class="s-body">You raised money to build. Instead you're spending 6–8 weeks interviewing, burning runway, watching your competitor ship — while your engineering roles sit open.</p>
+      </div>
+      <div class="s-col s-col-right">
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">6–8</div>
+            <div class="stat-label"><strong>Weeks average</strong>to hire a senior engineer through traditional channels</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num cyan">$20k</div>
+            <div class="stat-label"><strong>Minimum recruiter fee</strong>before your new hire writes a line of code</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num orange">$150k+</div>
+            <div class="stat-label"><strong>Annual salary</strong>for a US senior engineer on a $1–2M seed round</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: WHO WE ARE -->
+    <div class="slide slide-inner s-two" id="s3">
+      <div class="s-col s-col-right" style="background:var(--bg);border-left:none;border-right:1px solid var(--border)">
+        <div class="big-quote">
+          "Pre-vetted React & Node.js engineers from Pakistan, placed into your team in <em>7 days</em> — guaranteed to ship."
+        </div>
+        <p class="s-body">Pakistan produces 25,000+ CS graduates annually. The top engineers from IBA, LUMS, NUST, and FAST are world-class — and available at 40–60% below US market rates.</p>
+      </div>
+      <div class="s-col">
+        <div class="s-eyebrow">WHAT WE DO</div>
+        <div class="s-h">STAFFD<br>IS NOT A<br><em>RECRUITER.</em></div>
+        <p class="s-body">We're an engineering deployment firm. We find, vet, and match engineers to your exact stack — then stand behind them with three guarantees. You don't interview 50 people. You meet 2–3 we've already approved.</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: HOW IT WORKS -->
+    <div class="slide slide-inner s-full" id="s4">
+      <div class="s-eyebrow">THE PROCESS</div>
+      <div class="s-h">THREE STEPS.<br><em>SEVEN DAYS.</em></div>
+      <div class="process-track">
+        <div class="p-step">
+          <div class="p-left"><div class="p-dot">1</div><div class="p-line"></div></div>
+          <div class="p-content">
+            <div class="p-time">DAY ZERO · 30 MINUTES</div>
+            <div class="p-title">Intake call — tell us what you need</div>
+            <div class="p-desc">Stack, stage, what needs to ship, culture fit requirements. One call. We ask real questions, not checkbox questions.</div>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-left"><div class="p-dot">2</div><div class="p-line"></div></div>
+          <div class="p-content">
+            <div class="p-time">DAY 1–2 · 48 HOURS</div>
+            <div class="p-title">We match you from our pre-vetted bench</div>
+            <div class="p-desc">2–3 profiles: GitHub, recorded assessment, communication sample, stack-match score. You see the answer, not a pile of CVs.</div>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-left"><div class="p-dot">3</div><div class="p-line"></div></div>
+          <div class="p-content">
+            <div class="p-time">DAY 3–7 · ONE CALL EACH</div>
+            <div class="p-title">You meet, you decide, they start</div>
+            <div class="p-desc">45-min intro call per engineer. You pick. They're in your Slack this week. 14-day free trial starts the moment they do.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: THE VETTING -->
+    <div class="slide slide-inner s-two" id="s5">
+      <div class="s-col">
+        <div class="s-eyebrow">THE FILTER</div>
+        <div class="s-h">97%<br><em>REJECTED.</em><br>HERE'S WHY.</div>
+        <p class="s-body">Every engineer on our bench has survived four stages. Most fail on communication, not code.</p>
+        <div class="stat-row" style="margin-top:1rem">
+          <div class="stat-item">
+            <div class="stat-num" style="font-size:36px;min-width:60px">100</div>
+            <div class="stat-label">apply</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" style="font-size:36px;min-width:60px;color:var(--text2)">↓</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" style="font-size:48px;min-width:60px">3</div>
+            <div class="stat-label"><strong>make the bench</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="s-col s-col-right">
+        <div class="s-list" style="margin-top:0">
+          <div class="s-li"><div class="s-li-icon li-g">01</div><div><strong>CV + GitHub audit</strong>Real shipped code in production environments only. Pass rate: 30%</div></div>
+          <div class="s-li"><div class="s-li-icon li-c">02</div><div><strong>Communication interview</strong>45-min live call. English fluency, async writing, pushback handling. Pass rate: 40%</div></div>
+          <div class="s-li"><div class="s-li-icon li-g">03</div><div><strong>Technical assessment</strong>Real-world problems, not LeetCode. Scored by senior engineers. Pass rate: 50%</div></div>
+          <div class="s-li"><div class="s-li-icon li-c">04</div><div><strong>Live coding interview</strong>60-min live build. How they think when stuck matters as much as output. Pass rate: ~60%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: THE GUARANTEE -->
+    <div class="slide slide-inner s-full" id="s6">
+      <div class="s-eyebrow">THE GUARANTEE STACK</div>
+      <div class="s-h">THREE<br><em>GUARANTEES.</em><br>STACKED.</div>
+      <p class="s-body" style="max-width:600px">The entire downside sits with us, not you. Every guarantee covers a different fear.</p>
+      <div class="g-row">
+        <div class="g-block g1">
+          <div class="g-num">14D</div>
+          <div class="g-name">Free Trial</div>
+          <div class="g-desc">Work with your engineer for 14 days before paying a single dollar. Walk away anytime, no invoice, all code is yours.</div>
+        </div>
+        <div class="g-block g2">
+          <div class="g-num">7D</div>
+          <div class="g-name">Replacement Guarantee</div>
+          <div class="g-desc">Not the right fit in the first 7 days? We replace them free, no questions asked, replacement options in 48 hours.</div>
+        </div>
+        <div class="g-block g3">
+          <div class="g-num">60D</div>
+          <div class="g-name">Relentless Placement</div>
+          <div class="g-desc">If we can't place an engineer shipping real committed code within 60 days — you pay nothing. Ever. Full stop.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: PRICING -->
+    <div class="slide slide-inner s-two" id="s7">
+      <div class="s-col">
+        <div class="s-eyebrow">WHAT IT COSTS</div>
+        <div class="s-h">40–60%<br>BELOW<br><em>US RATES.</em></div>
+        <p class="s-body">Same quality, fraction of the cost. No recruiter fees. No lock-in contracts. Month-to-month with 7-day cancellation.</p>
+        <div class="stat-row" style="margin-top:1rem">
+          <div class="stat-item">
+            <div class="stat-num">$0</div>
+            <div class="stat-label"><strong>Upfront cost</strong>to start working with us</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num cyan">$0</div>
+            <div class="stat-label"><strong>Recruiter fee</strong>ever</div>
+          </div>
+        </div>
+      </div>
+      <div class="s-col s-col-right">
+        <div class="s-eyebrow">SAMPLE RATES</div>
+        <div class="s-list" style="margin-top:0">
+          <div class="s-li"><div class="s-li-icon li-g">SR</div><div><strong>Senior Full-Stack (React/Node)</strong>$6,000–8,000/month · US equivalent: $15,000–18,000/month</div></div>
+          <div class="s-li"><div class="s-li-icon li-c">MD</div><div><strong>Mid Full-Stack (React/Node)</strong>$4,000–5,500/month · US equivalent: $10,000–12,000/month</div></div>
+          <div class="s-li"><div class="s-li-icon li-o">JR</div><div><strong>Junior Full-Stack (React/Node)</strong>$2,500–3,500/month · US equivalent: $6,000–8,000/month</div></div>
+          <div class="s-li"><div class="s-li-icon li-g">QA</div><div><strong>QA Engineer</strong>$2,000–4,000/month · US equivalent: $7,000–10,000/month</div></div>
+        </div>
+        <p style="font-size:11px;color:var(--text3);font-family:var(--font-body);margin-top:12px;letter-spacing:0.04em">ALL-INCLUSIVE · NO SURPRISE INVOICES · CANCEL WITH 7 DAYS NOTICE</p>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: COMPARISON -->
+    <div class="slide slide-inner s-full" id="s8">
+      <div class="s-eyebrow">VS ALTERNATIVES</div>
+      <div class="s-h" style="font-size:clamp(32px,4vw,56px)">WHY NOT USE A <em>RECRUITER?</em></div>
+      <table class="comp-table">
+        <thead>
+          <tr><th>Factor</th><th>US Recruiter</th><th>Upwork</th><th class="staffd-col">Staffd</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Time to first candidate</td><td>3–6 weeks</td><td>Hours</td><td class="staffd-col">48 hours</td></tr>
+          <tr><td>Time to first commit</td><td>8–12 weeks</td><td>Varies</td><td class="staffd-col">≤7 days</td></tr>
+          <tr><td>Upfront fee</td><td>$15–25k</td><td>None</td><td class="staffd-col">$0</td></tr>
+          <tr><td>4-stage vetting</td><td><span class="cx">Rarely</span></td><td><span class="cx">✕</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>Communication assessed</td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>14-day free trial</td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>60-day money-back guarantee</td><td><span class="cx">✕</span></td><td><span class="cx">✕</span></td><td><span class="ck">✓</span></td></tr>
+          <tr><td>40–60% below US rates</td><td><span class="cx">✕</span></td><td><span class="ck">Sometimes</span></td><td><span class="ck">Always</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SLIDE 9: OBJECTIONS -->
+    <div class="slide slide-inner s-full" id="s9">
+      <div class="s-eyebrow">COMMON QUESTIONS</div>
+      <div class="s-h" style="font-size:clamp(28px,3.5vw,48px)">THINGS FOUNDERS<br><em>ALWAYS ASK.</em></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1rem">
+        <div class="s-li" style="flex-direction:column;gap:6px">
+          <strong style="color:var(--accent);font-size:13px">"I've been burned by offshore devs before."</strong>
+          <span>So have we — that's why we built this. The problem is the process, not the talent. We vet before you see them and guarantee the fit. The risk is ours.</span>
+        </div>
+        <div class="s-li" style="flex-direction:column;gap:6px">
+          <strong style="color:var(--cyan);font-size:13px">"What about time zones?"</strong>
+          <span>4–6 hours of US East Coast overlap as standard. Most seed teams are async-first anyway. We confirm overlap requirements on the intake call.</span>
+        </div>
+        <div class="s-li" style="flex-direction:column;gap:6px">
+          <strong style="color:var(--accent);font-size:13px">"Can they actually communicate in English?"</strong>
+          <span>Stage 2 of vetting is exclusively a communication interview. More engineers fail here than on the coding test. This is our hardest filter.</span>
+        </div>
+        <div class="s-li" style="flex-direction:column;gap:6px">
+          <strong style="color:var(--cyan);font-size:13px">"Are there lock-in contracts?"</strong>
+          <span>No minimums, no lock-ins. Month-to-month with 7-day cancellation notice. We're confident enough in our engineers we don't need contracts to keep you.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: CTA -->
+    <div class="slide slide-inner s-cta" id="s10">
+      <div class="s-eyebrow" style="justify-content:center;margin-bottom:1.5rem">NEXT STEP</div>
+      <h2>YOUR ENGINEER<br><em>IS WAITING.</em></h2>
+      <p class="s-cta-sub">One 20-minute call. We'll tell you if we have the right person on the bench right now — and if we don't, we'll be honest about it.<br><br><strong>No commitment. No pitch deck. Just tell us what you need.</strong></p>
+      <div class="cta-pills">
+        <div class="cta-pill primary">BOOK A 20-MIN CALL →</div>
+        <div class="cta-pill ghost">STAFFD.DEV</div>
+      </div>
+      <div class="cta-note">14-DAY FREE TRIAL · 7-DAY REPLACEMENT · 60-DAY GUARANTEE · $0 UPFRONT</div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress"><div class="progress-fill" id="prog" style="width:10%"></div></div>
+
+  </div>
+
+  <!-- DOT NAV -->
+  <div class="dot-nav" id="dots"></div>
+
+</div>
+
+<script>
+const titles=['INTRO','THE PROBLEM','WHO WE ARE','HOW IT WORKS','THE VETTING','THE GUARANTEE','PRICING','VS ALTERNATIVES','OBJECTIONS','NEXT STEP'];
+let cur=0,total=10;
+
+function buildDots(){
+  const d=document.getElementById('dots');
+  for(let i=0;i<total;i++){
+    const b=document.createElement('button');
+    b.className='dot'+(i===0?' active':'');
+    b.onclick=()=>goTo(i);
+    d.appendChild(b);
+  }
+}
+
+function goTo(n){
+  document.getElementById('s'+(cur+1)).classList.remove('active');
+  document.getElementById('s'+(cur+1)).classList.add('exit');
+  setTimeout(()=>document.getElementById('s'+(cur+1)).classList.remove('exit'),350);
+  cur=n;
+  document.getElementById('s'+(cur+1)).classList.add('active');
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  document.getElementById('counter').textContent=(cur+1)+' / '+total;
+  document.getElementById('slide-title').textContent=titles[cur];
+  document.getElementById('prog').style.width=((cur+1)/total*100)+'%';
+}
+
+function next(){if(cur<total-1)goTo(cur+1)}
+function prev(){if(cur>0)goTo(cur-1)}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='Space'){e.preventDefault();next()}
+  if(e.key==='ArrowLeft'){e.preventDefault();prev()}
+});
+
+buildDots();
+</script>
+</body>
+</html>
+
+

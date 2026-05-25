@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staffd.dev — Engineer Onboarding Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<link rel="stylesheet" href="../assets/ops.css">
+<link rel="stylesheet" href="../assets/ops-onboarding.css">
+</head>
+<body>
+<a href="../index.html" class="ops-back">← staffd.dev</a>
+
+<div class="page">
+
+  <div class="pg-kicker">STAFFD.DEV · ENGINEER ONBOARDING</div>
+  <h1 class="pg-h1">YOUR<br><em>ONBOARDING KIT</em></h1>
+
+  <div class="welcome-card">
+    <div class="wc-from">FROM THE STAFFD TEAM · READ THIS FIRST</div>
+    <div class="wc-body">
+      Congratulations — you made it through four stages and you're on our bench. <strong>That's a real achievement. Only 3 out of every 100 engineers who apply get here.</strong><br><br>
+      This kit walks you through everything you need to do before your first day with a client, and how to operate once you're placed. Read all 12 steps before your client starts. Every item exists because something went wrong when an engineer skipped it.<br><br>
+      Your success with Staffd is our success. We've placed you because we believe in your ability. Now it's your job to prove us right — and to make your client feel like hiring you was the best decision they made this quarter.<br><br>
+      One rule above all others: <strong>when in doubt, communicate early.</strong> Nothing we can't fix if we know about it in time.
+    </div>
+    <div class="wc-sig">— <strong>The Staffd Team</strong> · ops@staffd.dev</div>
+  </div>
+
+  <!-- PROGRESS TRACKER -->
+  <div class="progress-tracker">
+    <div class="pt-title">YOUR ONBOARDING PROGRESS</div>
+    <div class="pt-dots" id="pt-dots"></div>
+    <div class="pt-bar"><div class="pt-fill" id="pt-fill"></div></div>
+    <div class="pt-status" id="pt-status"><span>0</span> of 12 steps complete</div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step open" id="step1">
+    <div class="step-header" onclick="toggleStep('step1')">
+      <div class="step-check" id="sc1">01</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 01 · PRE-START</div>
+        <div class="step-title">READ YOUR CONTRACT — ALL OF IT</div>
+      </div>
+      <div class="step-time">TODAY</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">You'll receive a contractor agreement from Staffd before your first day. <strong>Read every clause before signing.</strong> Not skimming — reading. Especially the IP, confidentiality, and non-solicitation sections.</p>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Read the IP clause<span>Everything you build for a client belongs to that client. Not to you, not to Staffd. Even if you came up with the idea independently while working on their project.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Read the confidentiality clause<span>You cannot discuss what you're building, what stack the client uses, or anything you see in their codebase — with anyone, including friends and family.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Read the non-solicitation clause<span>You cannot approach clients directly for a full-time role or freelance work outside of Staffd for 12 months after the engagement ends. This protects everyone.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Sign and return within 24 hours of receiving it<span>Unsigned contracts delay your start date. If you have a question about any clause, email ops@staffd.dev before signing.</span></div></div>
+      </div>
+      <div class="warning-box"><strong>Non-negotiable:</strong> Working without a signed contract is not possible. We will delay your start date if this isn't complete.</div>
+      <button class="complete-btn" onclick="completeStep(1)">✓ MARK STEP 1 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step" id="step2">
+    <div class="step-header" onclick="toggleStep('step2')">
+      <div class="step-check" id="sc2">02</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 02 · PRE-START</div>
+        <div class="step-title">SET UP YOUR PROFESSIONAL TOOLS</div>
+      </div>
+      <div class="step-time">DAY -2</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Before your first day, every tool needs to be installed, tested, and working. <strong>Spending 30 minutes on Day 1 figuring out Zoom is 30 minutes your client sees you as unprepared.</strong></p>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Zoom — download desktop app, test audio/video, set a professional background<span>No V-tube backgrounds. Solid wall or simple blur only. Test your microphone so there's no echo.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Slack — download desktop and mobile app<span>You'll be on the client's Slack workspace. Enable notifications. Check Slack at least every 2 hours during working hours.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">GitHub — confirm your account is clean and professional<span>Remove any unprofessional repo names. Pin 2–3 of your strongest repos. Your client will look at your profile.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Toggl Track — set up your free account<span>You'll log hours here. Download the desktop app. Create a timer for your client's project name (COO will send you the project name).</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Linear / Jira / Notion — ask your client which they use and set it up before Day 1<span>Don't wait for Day 1 to ask for access. Email the client the day before to confirm which tools they use so you're ready.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Loom — download and record a 30-second test video<span>You'll use Loom for async updates and code walkthroughs. Practice now so it's natural when you need it.</span></div></div>
+      </div>
+      <button class="complete-btn" onclick="completeStep(2)">✓ MARK STEP 2 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step" id="step3">
+    <div class="step-header" onclick="toggleStep('step3')">
+      <div class="step-check" id="sc3">03</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 03 · PRE-START</div>
+        <div class="step-title">RESEARCH YOUR CLIENT BEFORE DAY ONE</div>
+      </div>
+      <div class="step-time">DAY -1</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">You will be working inside someone's startup. <strong>Know what they're building before you walk in.</strong> A founder who sees you've done homework trusts you in the first 10 minutes.</p>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Read their website end-to-end<span>What do they actually do? Who is their customer? What's the value proposition? You should be able to explain their product in one sentence.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Find their product on Product Hunt, App Store, or in the browser<span>Use it if you can. Even 10 minutes using a product teaches you more than an hour reading about it.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Read the founder's LinkedIn<span>What did they do before this startup? What's their background? This tells you how technical they are and how to calibrate your communication.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Look up their tech stack if publicly available<span>StackShare.io, their job postings, or their GitHub if open source. Know what you're walking into.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Prepare two questions to ask on Day 1<span>Smart questions show preparation. Bad questions: "What does your company do?" Good questions: "What's the biggest technical pain point you're hoping I can help with first?"</span></div></div>
+      </div>
+      <button class="complete-btn" onclick="completeStep(3)">✓ MARK STEP 3 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step" id="step4">
+    <div class="step-header" onclick="toggleStep('step4')">
+      <div class="step-check" id="sc4">04</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 04 · DAY ONE</div>
+        <div class="step-title">YOUR FIRST MESSAGE TO THE CLIENT</div>
+      </div>
+      <div class="step-time">DAY 1 MORNING</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Your first Slack message to the client sets the tone for the entire engagement. <strong>Send this within 30 minutes of gaining access to their workspace.</strong> Use this template exactly — don't try to be clever.</p>
+      <div class="script-box">
+        <div class="sb-label">FIRST DAY SLACK MESSAGE — SEND THIS EXACTLY</div>
+        <div class="sb-text">
+          "Hey [Founder Name] — excited to be here. I've spent some time going through your product and website before today, so I have a rough sense of what you're building.<br><br>
+          A few things that would help me ramp up fast:<br>
+          1. Access to the codebase (I can share my GitHub username if easier)<br>
+          2. A quick read on the most important thing you'd like me to focus on first<br>
+          3. How you prefer to communicate — I'll match your style completely<br><br>
+          Happy to jump on a 20-minute call today if that's faster than async back-and-forth. Whatever works best for you."
+        </div>
+        <div class="sb-note">This message communicates: I've prepared, I'm organised, I'm not going to be a burden, and I'm flexible. It makes the founder feel like they hired well.</div>
+      </div>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Send the first message within 30 minutes of joining their Slack</div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Update your Slack profile with your full name and a professional photo<span>Not a selfie. A clean headshot or well-lit photo. Your display name should match what you told Staffd.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Send COO at Staffd a brief "I'm in" message<span>Let ops@staffd.dev know you've joined the workspace and sent your first message. This starts the 14-day trial clock.</span></div></div>
+      </div>
+      <button class="complete-btn" onclick="completeStep(4)">✓ MARK STEP 4 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step" id="step5">
+    <div class="step-header" onclick="toggleStep('step5')">
+      <div class="step-check" id="sc5">05</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 05 · DAY ONE</div>
+        <div class="step-title">MAKE YOUR FIRST COMMIT BY DAY 3</div>
+      </div>
+      <div class="step-time">DAY 1–3</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro"><strong>You must commit code to the client's main branch by Day 3.</strong> Not a PR. Not a draft. Merged, committed code. This is part of Staffd's guarantee to clients. If you are blocked from doing this, tell us within 24 hours.</p>
+      <div class="info-box"><strong>Why Day 3 matters:</strong> Staffd guarantees clients that their engineer will be committing code within 7 days of starting. Your Day 3 commit is what we need to verify this. It doesn't have to be a large feature — a fixed bug, a refactored component, a test added. Anything merged and real.</div>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Get codebase access on Day 1 — follow up if not received by Day 1 EOD<span>If you don't have access by 5pm on Day 1, send a Slack message asking for it. Then message COO at Staffd if still no response by the next morning.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Run the project locally by Day 2<span>If you can't get it running, ask for help. Don't stay stuck for more than 2 hours without asking a question.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Make your first commit by Day 3<span>Even if it's a small bug fix. The commit signals to the client: this person is real, they can work in our codebase, the placement is working.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Tell COO when your first commit is merged<span>Send the commit URL to ops@staffd.dev. This is important for our records and for the client's guarantee.</span></div></div>
+      </div>
+      <div class="warning-box"><strong>If you are blocked:</strong> Missing dependencies, broken dev environment, no access, unclear requirements — tell us within 24 hours. We will escalate with the client immediately. Do NOT stay blocked silently.</div>
+      <button class="complete-btn" onclick="completeStep(5)">✓ MARK STEP 5 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step" id="step6">
+    <div class="step-header" onclick="toggleStep('step6')">
+      <div class="step-check" id="sc6">06</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 06 · ONGOING</div>
+        <div class="step-title">THE DAILY ASYNC UPDATE — NON-NEGOTIABLE</div>
+      </div>
+      <div class="step-time">EVERY DAY</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Every single working day, before you stop working, you send a daily update in the client's Slack. <strong>This is not optional. This is what makes remote work actually work.</strong> It takes 5 minutes. It prevents 90% of client anxiety.</p>
+      <div class="script-box">
+        <div class="sb-label">DAILY UPDATE FORMAT — USE THIS EVERY DAY</div>
+        <div class="sb-text">
+          "📅 EOD Update — [Date]<br><br>
+          ✅ Shipped today:<br>
+          - [Specific thing 1, with PR/commit link if applicable]<br>
+          - [Specific thing 2]<br><br>
+          🔄 In progress:<br>
+          - [What you're working on tomorrow, with expected completion]<br><br>
+          🚧 Blockers / questions:<br>
+          - [Specific blocker with what you've tried and what you need — or "none"]<br><br>
+          Hours logged today: [X] hrs"
+        </div>
+        <div class="sb-note">Clients don't need long paragraphs. They need to know: did something ship, what's next, is anything blocked. This format answers all three in under 2 minutes of reading.</div>
+      </div>
+      <div class="rule-grid">
+        <div class="rule-card rc-bad">
+          <span class="rc-icon">✕</span>
+          <div class="rc-title">Bad daily update</div>
+          <div class="rc-body">"Worked on the dashboard today. Will continue tomorrow."</div>
+        </div>
+        <div class="rule-card rc-good">
+          <span class="rc-icon">✓</span>
+          <div class="rc-title">Good daily update</div>
+          <div class="rc-body">"Shipped: user auth flow (PR #42 merged). In progress: payments dashboard — estimated tomorrow EOD. Blocker: need Stripe test keys, can you send? 6hrs logged."</div>
+        </div>
+      </div>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Send your first EOD update on Day 1<span>Even if you only spent the day getting set up. "Shipped: got codebase running locally, reviewed auth module. In progress: making first commit tomorrow. No blockers." is a valid Day 1 update.</span></div></div>
+      </div>
+      <button class="complete-btn" onclick="completeStep(6)">✓ MARK STEP 6 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step" id="step7">
+    <div class="step-header" onclick="toggleStep('step7')">
+      <div class="step-check" id="sc7">07</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 07 · ONGOING</div>
+        <div class="step-title">HOW TO HANDLE BEING STUCK</div>
+      </div>
+      <div class="step-time">WHEN IT HAPPENS</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">You will get stuck. That's not a problem. <strong>Staying stuck silently for more than 2 hours without communicating is a problem.</strong> Here is the exact protocol.</p>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Try to solve it yourself for 1 hour maximum<span>Check docs, Stack Overflow, the codebase. Set a timer. After 1 hour, if no progress — move to the next step.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Send a specific blocker message in Slack — not a vague one</div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">If no response in 2 hours, ping COO at Staffd<span>We can sometimes reach the client faster than you can, or know context about the codebase that helps unblock you.</span></div></div>
+      </div>
+      <div class="script-box cyan">
+        <div class="sb-label">BLOCKER MESSAGE FORMAT</div>
+        <div class="sb-text">
+          "Blocked on [specific thing]. Here's what I know:<br>
+          - What I'm trying to do: [clear description]<br>
+          - What I've tried: [list 2–3 things]<br>
+          - What I think I need: [specific ask]<br>
+          - Impact: this is blocking [feature/PR], I can unblock myself if I get [X] by [time]"
+        </div>
+      </div>
+      <div class="warning-box"><strong>Never say:</strong> "I'm stuck, not sure what to do." Always have a specific question. If you genuinely have no idea where to start, that means you need a 15-minute call — ask for one.</div>
+      <button class="complete-btn" onclick="completeStep(7)">✓ MARK STEP 7 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 8 -->
+  <div class="step" id="step8">
+    <div class="step-header" onclick="toggleStep('step8')">
+      <div class="step-check" id="sc8">08</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 08 · ONGOING</div>
+        <div class="step-title">STANDUPS AND MEETINGS — HOW TO SHOW UP</div>
+      </div>
+      <div class="step-time">RECURRING</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Every standup, every meeting, is a chance to either build or erode trust. <strong>The difference between an engineer who gets a 6-month renewal and one who doesn't is almost always how they show up in meetings.</strong></p>
+      <ul class="plain">
+        <li><strong>Be 2 minutes early.</strong> Not on time — early. This signals respect for the client's schedule.</li>
+        <li><strong>Camera on.</strong> Always. Unless the client specifically says it's optional. Default to camera on.</li>
+        <li><strong>Have your update ready before the call starts.</strong> What you shipped yesterday, what you're working on today, any blockers. Don't improvise in a standup.</li>
+        <li><strong>Ask one smart question per meeting.</strong> Not more. One specific, prepared question shows you're thinking beyond your task list.</li>
+        <li><strong>Never say "I'll look into it" without a timeframe.</strong> Say "I'll look into it and have an answer by 3pm EST today."</li>
+        <li><strong>Follow up async on anything that was discussed.</strong> After every meeting, send a brief Slack summary of the decisions made and who owns what. Even if nobody asked for it.</li>
+      </ul>
+      <button class="complete-btn" onclick="completeStep(8)">✓ MARK STEP 8 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 9 -->
+  <div class="step" id="step9">
+    <div class="step-header" onclick="toggleStep('step9')">
+      <div class="step-check" id="sc9">09</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 09 · ONGOING</div>
+        <div class="step-title">HOW TO HANDLE UNCLEAR REQUIREMENTS</div>
+      </div>
+      <div class="step-time">WHEN IT HAPPENS</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Seed-stage founders give unclear requirements. This is not a flaw — it's the nature of early-stage companies. <strong>Your job is not to wait for clarity. Your job is to create it.</strong></p>
+      <div class="script-box">
+        <div class="sb-label">WHEN REQUIREMENTS ARE UNCLEAR — ASK THIS</div>
+        <div class="sb-text">
+          "Before I start on [task], I want to make sure I build the right thing. A few quick questions:<br>
+          1. What does success look like — how will you know this is done?<br>
+          2. Are there any existing examples of what you have in mind?<br>
+          3. Any edge cases or constraints I should know about?<br><br>
+          Happy to share a quick wireframe/spec of what I'm planning before I start if that would help catch misalignment early."
+        </div>
+        <div class="sb-note">This question pattern shows professionalism. It prevents you from building the wrong thing. And founders love engineers who think about the outcome before writing the first line.</div>
+      </div>
+      <div class="warning-box"><strong>Never build based on assumptions you haven't verified.</strong> An hour of clarification saves a week of rework. When in doubt, ask — then build.</div>
+      <button class="complete-btn" onclick="completeStep(9)">✓ MARK STEP 9 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 10 -->
+  <div class="step" id="step10">
+    <div class="step-header" onclick="toggleStep('step10')">
+      <div class="step-check" id="sc10">10</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 10 · WEEKLY</div>
+        <div class="step-title">THE WEEKLY STAFFD CHECK-IN</div>
+      </div>
+      <div class="step-time">EVERY WEDNESDAY</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Every Wednesday, COO will send you a brief WhatsApp message. <strong>Reply within 4 hours.</strong> This is how we monitor the placement and catch problems before they escalate.</p>
+      <div class="script-box cyan">
+        <div class="sb-label">WHAT COO WILL ASK</div>
+        <div class="sb-text">
+          "Weekly check-in — how are things with [Client]?<br>
+          1. How's the relationship/communication? (1–5)<br>
+          2. Any technical blockers?<br>
+          3. Anything we should know about?"
+        </div>
+      </div>
+      <ul class="plain">
+        <li><strong>Be honest.</strong> If something is difficult, tell us. We can help. If you wait until it's a crisis, our options are limited.</li>
+        <li><strong>Rate relationship honestly.</strong> A 3/5 from you triggers a proactive check-in with the client from our side — we'll see if there's anything we can improve. This protects your placement.</li>
+        <li><strong>Don't just say "everything's fine."</strong> If everything genuinely is fine — great. But if there's a friction point you're managing, tell us so we can support you.</li>
+      </ul>
+      <button class="complete-btn" onclick="completeStep(10)">✓ MARK STEP 10 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 11 -->
+  <div class="step" id="step11">
+    <div class="step-header" onclick="toggleStep('step11')">
+      <div class="step-check" id="sc11">11</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 11 · PAYMENT</div>
+        <div class="step-title">HOW AND WHEN YOU GET PAID</div>
+      </div>
+      <div class="step-time">1ST OF EACH MONTH</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Payment is processed on the 1st of each month for the previous month's work. <strong>Send your invoice by the 25th of each month to ensure no delays.</strong></p>
+      <div class="action-list">
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Set up your Wise personal account for USD receiving<span>wise.com — free. Share your USD account details with COO at ops@staffd.dev before your first invoice date. This is how we'll pay you.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Send your invoice by the 25th of each month<span>Invoice should include: your name, the month, total hours (from Toggl), your agreed rate, total amount in USD. Email to ops@staffd.dev.</span></div></div>
+        <div class="action-item" onclick="toggleAction(this)"><div class="action-cb"></div><div class="action-text">Confirm payment receipt within 24 hours of expected payment date<span>If you haven't received payment by the 3rd of the month, WhatsApp COO immediately. Don't wait.</span></div></div>
+      </div>
+      <div class="info-box"><strong>Payment timeline:</strong> Client pays Staffd by the 28th. Staffd pays you by the 1st–2nd. There is a 2–3 day buffer for bank processing. Wise transfers typically arrive same day or next day.</div>
+      <button class="complete-btn" onclick="completeStep(11)">✓ MARK STEP 11 COMPLETE</button>
+    </div>
+  </div>
+
+  <!-- STEP 12 -->
+  <div class="step" id="step12">
+    <div class="step-header" onclick="toggleStep('step12')">
+      <div class="step-check" id="sc12">12</div>
+      <div class="step-meta">
+        <div class="step-num">STEP 12 · YOUR CAREER</div>
+        <div class="step-title">HOW TO GET PROMOTED TO A BETTER CLIENT</div>
+      </div>
+      <div class="step-time">ONGOING</div>
+      <div class="step-chevron">▼</div>
+    </div>
+    <div class="step-body">
+      <p class="step-intro">Staffd has clients at different stages — some are early seed, some are post-Series A with bigger budgets and more interesting technical problems. <strong>How you perform with your first client determines which clients you get access to next.</strong></p>
+      <div class="rule-grid">
+        <div class="rule-card rc-good">
+          <span class="rc-icon">⬆️</span>
+          <div class="rc-title">What moves you up</div>
+          <div class="rc-body">Daily updates sent consistently. First commit by Day 3. Client satisfaction score 4–5/5. Proactive blocker communication. Renewals requested by client.</div>
+        </div>
+        <div class="rule-card rc-bad">
+          <span class="rc-icon">⬇️</span>
+          <div class="rc-title">What stalls your profile</div>
+          <div class="rc-body">Missed daily updates. Silent when blocked. Defensive when given feedback. Client requests replacement. Satisfaction score below 3/5.</div>
+        </div>
+      </div>
+      <ul class="plain">
+        <li><strong>Ask for a testimonial after 60 days.</strong> A written quote from your client goes on your Staffd profile and is shown to future clients. Good testimonials unlock higher-rate clients.</li>
+        <li><strong>Tell COO what you want to work on next.</strong> If you want a more complex technical challenge, a specific stack, a Series A team — tell us. We match you to what's available.</li>
+        <li><strong>Refer other engineers.</strong> If you know someone who should be on the bench, refer them. Referral bonus: PKR 5,000 if they pass all four stages.</li>
+        <li><strong>Your rate is reviewed every 6 months.</strong> If your client satisfaction scores are strong, you can request a rate review. Come with evidence: commits, features shipped, satisfaction scores.</li>
+      </ul>
+      <button class="complete-btn" onclick="completeStep(12)">✓ MARK ALL STEPS COMPLETE</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const completed=new Set();
+const total=12;
+
+function buildDots(){
+  const c=document.getElementById('pt-dots');
+  for(let i=1;i<=total;i++){
+    const d=document.createElement('div');
+    d.className='pt-dot';
+    d.id='pd'+i;
+    d.textContent=i;
+    d.onclick=()=>document.getElementById('step'+i).scrollIntoView({behavior:'smooth'});
+    c.appendChild(d);
+  }
+}
+
+function updateProgress(){
+  const done=completed.size;
+  document.getElementById('pt-fill').style.width=(done/total*100)+'%';
+  document.getElementById('pt-status').innerHTML='<span>'+done+'</span> of '+total+' steps complete';
+  for(let i=1;i<=total;i++){
+    const d=document.getElementById('pd'+i);
+    d.classList.toggle('done',completed.has(i));
+    d.classList.toggle('current',!completed.has(i)&&i===Math.min(...Array.from({length:total},(_, j)=>j+1).filter(j=>!completed.has(j))));
+    if(completed.has(i))d.textContent='✓';
+  }
+}
+
+function completeStep(n){
+  completed.add(n);
+  const step=document.getElementById('step'+n);
+  step.classList.add('completed');
+  document.getElementById('sc'+n).textContent='✓';
+  step.querySelector('.complete-btn').textContent='✓ COMPLETED';
+  updateProgress();
+  // open next step
+  if(n<total){
+    const next=document.getElementById('step'+(n+1));
+    next.classList.add('open');
+    setTimeout(()=>next.scrollIntoView({behavior:'smooth',block:'start'}),200);
+  }
+}
+
+function toggleStep(id){
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleAction(el){
+  el.classList.toggle('done-item');
+  const cb=el.querySelector('.action-cb');
+  cb.textContent=el.classList.contains('done-item')?'✓':'';
+}
+
+buildDots();
+updateProgress();
+</script>
+</body>
+</html>
+
+
