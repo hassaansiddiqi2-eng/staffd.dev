@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Staffd.dev — How It Works & Vetting</title>
+<title>Staffd.dev — How It Works &amp; Vetting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/shared.css">
@@ -13,6 +13,11 @@
 
 <nav>
   <a href="index.html" class="nav-logo">staffd<span>.dev</span></a>
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-page="hiw" onclick="showPage('hiw', this)">How It Works</button>
+    <button class="nav-tab" data-page="vetting" onclick="showPage('vetting', this)">Vetting</button>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="process.html">How It Works</a></li>
     <li><a href="process.html#vetting">Vetting</a></li>
@@ -20,10 +25,6 @@
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="#" class="nav-cta book-call">Book a Call →</a></li>
   </ul>
-  <div class="nav-tabs">
-    <button class="nav-tab active" data-page="hiw" onclick="showPage('hiw', this)">How It Works</button>
-    <button class="nav-tab" data-page="vetting" onclick="showPage('vetting', this)">Vetting</button>
-  </div>
 </nav>
 
 <div class="page-subnav nav-tabs">
@@ -122,7 +123,7 @@
               <div class="step-detail"><div class="step-detail-dot"></div>Stack deep-dive</div>
               <div class="step-detail"><div class="step-detail-dot"></div>Culture + async setup</div>
               <div class="step-detail"><div class="step-detail-dot"></div>Timezone requirements</div>
-              <div class="step-detail"><div class="step-detail-dot"></div>Scope & deliverables</div>
+              <div class="step-detail"><div class="step-detail-dot"></div>Scope &amp; deliverables</div>
             </div>
           </div>
         </div>
@@ -448,11 +449,11 @@
       <div class="criteria-grid">
         <div class="criteria-card">
           <span class="criteria-icon">⚡</span>
-          <div class="criteria-title">SHIPS, DOESN'T JUST TALKS</div>
+          <div class="criteria-title">SHIPS, DOESN'T JUST TALK</div>
           <div class="criteria-body">We look for engineers with <strong>deployed code</strong> — live apps, real users, production systems. Anyone can talk about architecture. Show us what you've shipped.</div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">🗣</span>
+          <span class="criteria-icon">🗣️</span>
           <div class="criteria-title">COMMUNICATES LIKE A PEER</div>
           <div class="criteria-body">Your engineer will be in your Slack, on your standups, and pushing back on your product decisions. <strong>Communication quality is weighted as heavily as technical skill.</strong></div>
         </div>
@@ -462,7 +463,7 @@
           <div class="criteria-body">Startups break things constantly. We test how engineers handle <strong>unfamiliar problems</strong> — do they get methodical or do they freeze? Only engineers who get methodical make the bench.</div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">🏗</span>
+          <span class="criteria-icon">🏗️</span>
           <div class="criteria-title">OWNS THEIR WORK</div>
           <div class="criteria-body">We screen for engineers who think about <strong>outcomes, not tasks</strong>. The difference between "I built what was asked" and "I noticed X was going to break and fixed it proactively."</div>
         </div>
@@ -554,8 +555,9 @@
     <a href="#" class="book-call">Book a Call</a>
   </div>
 </footer>
+
 <script src="assets/config.js"></script>
+<script src="assets/nav.js"></script>
 <script src="assets/process.js"></script>
 </body>
 </html>
-

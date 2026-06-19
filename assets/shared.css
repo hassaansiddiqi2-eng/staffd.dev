@@ -1,4 +1,4 @@
-/* BOOK_CALL_URL — edit assets/config.js */
+/* Booking URL is configured in assets/config.js */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -9,37 +9,45 @@
   --bg4: #1c1c1c;
   --border: #222222;
   --border2: #2a2a2a;
-  --accent: #00E5A0;
-  --accent2: #00b87a;
-  --accent-dim: rgba(0, 229, 160, 0.08);
-  --accent-glow: rgba(0, 229, 160, 0.15);
+
+  /* Blue accent system (replaces the original green/turquoise) */
+  --accent: #3b82f6;          /* primary blue */
+  --accent2: #2563eb;         /* darker blue (hover) */
+  --accent-dim: rgba(59, 130, 246, 0.08);
+  --accent-glow: rgba(59, 130, 246, 0.15);
+
   --text: #f0f0f0;
   --text2: #888888;
   --text3: #555555;
   --danger: #ff4d4d;
   --warning: #ffaa00;
   --white: #ffffff;
+  --on-accent: #ffffff;       /* text colour on top of the blue accent */
+
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --display: 'Syne', sans-serif;
   --body: 'DM Sans', sans-serif;
   --mono: 'DM Sans', sans-serif;
+
   --radius: 12px;
   --radius-sm: 8px;
   --r: 12px;
   --r-sm: 8px;
-  --g1: #00E5A0;
-  --g2: #00E5FF;
-  --g3: #FF6B00;
-  --g1d: rgba(0, 229, 160, 0.08);
-  --g2d: rgba(0, 229, 255, 0.07);
-  --g3d: rgba(255, 107, 0, 0.07);
-  --g1b: rgba(0, 229, 160, 0.15);
-  --g2b: rgba(0, 229, 255, 0.15);
-  --g3b: rgba(255, 107, 0, 0.15);
+
+  /* Accent shades used by the guarantee / vetting pages */
+  --g1: #3b82f6;              /* blue */
+  --g2: #60a5fa;             /* light blue (replaces cyan) */
+  --g3: #ff8c42;             /* warm orange kept for contrast */
+  --g1d: rgba(59, 130, 246, 0.08);
+  --g2d: rgba(96, 165, 250, 0.07);
+  --g3d: rgba(255, 140, 66, 0.07);
+  --g1b: rgba(59, 130, 246, 0.15);
+  --g2b: rgba(96, 165, 250, 0.15);
+  --g3b: rgba(255, 140, 66, 0.15);
   --red: #ff4d4d;
-  --orange: #ff8c00;
-  --cyan: #00E5FF;
+  --orange: #ff8c42;
+  --cyan: #60a5fa;
 }
 
 html { scroll-behavior: smooth; }
@@ -58,7 +66,7 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
-/* NAV */
+/* ── NAV ── */
 nav {
   position: fixed;
   top: 0;
@@ -108,7 +116,7 @@ nav {
 
 .nav-cta {
   background: var(--accent);
-  color: #000 !important;
+  color: var(--on-accent) !important;
   padding: 8px 18px;
   border-radius: var(--radius-sm);
   font-weight: 600 !important;
@@ -117,6 +125,31 @@ nav {
 }
 
 .nav-cta:hover { background: var(--accent2) !important; }
+
+/* Hamburger toggle (mobile only) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Secondary tab nav (process page) */
 .nav-tabs {
@@ -145,14 +178,14 @@ nav {
 .nav-tab.active,
 .nav-tab:hover {
   background: var(--accent);
-  color: #000;
+  color: var(--on-accent);
 }
 
-/* Buttons */
+/* ── Buttons ── */
 .btn-primary,
 .btn-main {
   background: var(--accent);
-  color: #000;
+  color: var(--on-accent);
   padding: 14px 28px;
   border-radius: var(--radius-sm);
   font-weight: 600;
@@ -190,7 +223,7 @@ nav {
 .btn-secondary:hover,
 .btn-ghost:hover { border-color: var(--text3); }
 
-/* Typography */
+/* ── Typography ── */
 .section-tag,
 .section-eyebrow {
   font-size: 12px;
@@ -253,7 +286,7 @@ h2 em { font-style: normal; color: var(--accent); }
 
 section { padding: 100px 2rem; max-width: 1100px; margin: 0 auto; }
 
-/* Footer */
+/* ── Footer ── */
 footer,
 .site-footer {
   border-top: 1px solid var(--border);
@@ -282,20 +315,51 @@ footer a:hover { color: var(--text2); }
 
 .site-footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
-/* Ops */
-.ops-back {
-  display: inline-block;
-  margin: 1.5rem 2rem;
-  font-size: 14px;
-  color: var(--text2);
-  text-decoration: none;
-}
-
-.ops-back:hover { color: var(--accent); }
-
-.ops-page { max-width: 900px; margin: 0 auto; padding: 80px 2rem 4rem; }
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
+/* ── Responsive nav ── */
+@media (max-width: 900px) {
   nav { padding: 0 1.25rem; }
+
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1.25rem 1.25rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  }
+
+  .nav-open .nav-links {
+    max-height: 380px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li { width: 100%; }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a.nav-cta {
+    text-align: center;
+    margin-top: 12px;
+    padding: 12px 18px !important;
+    border-bottom: none;
+  }
 }

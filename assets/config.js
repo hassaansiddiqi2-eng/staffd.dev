@@ -1,4 +1,4 @@
-/* Set your Calendly or booking URL here — updates all .book-call links */
+/* Set your Calendly or booking URL here — updates every .book-call link site-wide */
 window.BOOK_CALL_URL = '#';
 
 document.addEventListener('DOMContentLoaded', () => {
