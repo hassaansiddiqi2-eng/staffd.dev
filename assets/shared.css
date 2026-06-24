@@ -91,6 +91,15 @@ nav {
   color: var(--white);
   text-decoration: none;
   letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nav-logo-mark {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .nav-logo span,

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 120" role="img" aria-label="Staffd logo">
+  <g fill="none" stroke="#9aa0b4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="40,30 18,60 40,90"/>
+    <polyline points="100,30 122,60 100,90"/>
+  </g>
+  <text x="70" y="62" text-anchor="middle" dominant-baseline="central"
+        font-family="'Syne','Arial Black','Segoe UI',sans-serif" font-weight="800"
+        font-size="50" letter-spacing="-3" fill="#2a1fe3">SD</text>
+</svg>
