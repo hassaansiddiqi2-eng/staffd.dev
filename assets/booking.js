@@ -167,6 +167,13 @@
 
   /* ── Modal open / close ── */
   function openModal() {
+    if (!overlay || !modal) {
+      overlay      = document.getElementById('bookCallOverlay');
+      modal        = document.getElementById('bookCallModal');
+      form         = document.getElementById('bookCallForm');
+      successEl    = document.getElementById('bookingSuccess');
+      errorBanner  = document.getElementById('bookingErrorBanner');
+    }
     if (!overlay) return;
 
     if (form) form.style.display = '';

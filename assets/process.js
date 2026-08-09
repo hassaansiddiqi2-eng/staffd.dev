@@ -1,4 +1,5 @@
 function showPage(id, btn) {
+  if (btn && btn.preventDefault) btn.preventDefault();
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
   const page = document.getElementById('page-' + id);
@@ -6,10 +7,10 @@ function showPage(id, btn) {
   page.classList.add('active');
   page.classList.add('page-enter');
   setTimeout(() => page.classList.remove('page-enter'), 400);
-  document.querySelectorAll('.nav-tab[data-page="' + id + '"]').forEach(t => t.classList.add('active'));
+  document.querySelectorAll('[data-page="' + id + '"]').forEach(t => t.classList.add('active'));
   if (history.replaceState) {
     const path = window.location.pathname.split('/').pop() || 'process.html';
-    history.replaceState(null, '', id === 'vetting' ? path + '#vetting' : path);
+    history.replaceState(null, '', id === 'vetting' ? path + '#vetting' : path + '#hiw');
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -22,9 +23,15 @@ function toggleFaq(el) {
 
 function initHashRouting() {
   const hash = window.location.hash.replace('#', '');
-  if (hash === 'vetting') {
-    const btn = document.querySelector('.nav-tab[data-page="vetting"]');
+  if (hash === 'vetting' || hash === 'page-vetting') {
+    const btn = document.querySelector('[data-page="vetting"]');
     showPage('vetting', btn);
+  } else if (hash === 'hiw' || hash === 'page-hiw' || hash === 'how-it-works') {
+    const btn = document.querySelector('[data-page="hiw"]');
+    showPage('hiw', btn);
+  } else {
+    const btn = document.querySelector('[data-page="hiw"]');
+    showPage('hiw', btn);
   }
 }
 

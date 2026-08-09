@@ -49,6 +49,6 @@ function loadPartial(containerId, partialPath) {
 
 /* Load partials on DOMContentLoaded */
 document.addEventListener('DOMContentLoaded', function () {
-  loadPartial('site-nav', '/partials/nav.html');
-  loadPartial('site-footer', '/partials/footer.html');
+  loadPartial('site-nav', 'partials/nav.html');
+  loadPartial('site-footer', 'partials/footer.html');
 });
