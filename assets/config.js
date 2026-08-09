@@ -1,10 +1,54 @@
-/* Set your Calendly or booking URL here — updates every .book-call link site-wide */
-window.BOOK_CALL_URL = '#';
+/* ═══════════════════════════════════════════════════════
+   SITE CONFIG — Booking modal + Partial loader
+   ═══════════════════════════════════════════════════════ */
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.book-call, a.nav-cta').forEach(el => {
-    if (window.BOOK_CALL_URL && window.BOOK_CALL_URL !== '#') {
-      el.setAttribute('href', window.BOOK_CALL_URL);
+/* Event delegation for booking modal — single listener for all CTAs site-wide */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('[data-action="open-booking-modal"]');
+  if (btn) {
+    e.preventDefault();
+    if (typeof window.openBookingModal === 'function') {
+      window.openBookingModal();
     }
-  });
+  }
+});
+
+/* ── Partial loader (progressive enhancement) ── */
+function loadPartial(containerId, partialPath) {
+  var container = document.getElementById(containerId);
+  if (!container) return;
+
+  fetch(partialPath)
+    .then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    })
+    .then(function (html) {
+      container.innerHTML = html;
+
+      /* Re-init mobile nav toggle for the newly loaded nav */
+      if (containerId === 'site-nav') {
+        var toggle = container.querySelector('.nav-toggle');
+        var nav = container.querySelector('nav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', function () {
+            nav.classList.toggle('nav-open');
+          });
+          nav.querySelectorAll('.nav-links a').forEach(function (link) {
+            link.addEventListener('click', function () {
+              nav.classList.remove('nav-open');
+            });
+          });
+        }
+      }
+    })
+    .catch(function () {
+      /* Fetch failed — keep the static fallback HTML already in the container */
+    });
+}
+
+/* Load partials on DOMContentLoaded */
+document.addEventListener('DOMContentLoaded', function () {
+  loadPartial('site-nav', '/partials/nav.html');
+  loadPartial('site-footer', '/partials/footer.html');
 });

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Staffd.dev</title>
+<meta name="description" content="The page you're looking for doesn't exist. Head back to Staffd.dev to hire pre-vetted Pakistani engineers.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+  .error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  .error-code {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 15vw, 160px);
+    font-weight: 800;
+    color: var(--bg3);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -4px;
+  }
+  .error-code span {
+    color: var(--accent);
+  }
+  .error-title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .error-body {
+    font-size: 16px;
+    color: var(--text2);
+    max-width: 440px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+  .error-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV (static fallback) -->
+<div id="site-nav">
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Staffd.dev logo" class="nav-logo-mark">staffd<span>.dev</span></a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links">
+    <li><a href="process.html">How It Works</a></li>
+    <li><a href="process.html#vetting">Vetting</a></li>
+    <li><a href="guarantee.html">Guarantee</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="#" class="nav-cta" data-action="open-booking-modal">Book a Call →</a></li>
+  </ul>
+</nav>
+</div>
+
+<div class="error-page">
+  <div class="error-code">4<span>0</span>4</div>
+  <div class="error-title">Page not found.</div>
+  <p class="error-body">This page doesn't exist — but your next engineer does. Head back and let's get you matched.</p>
+  <div class="error-links">
+    <a href="index.html" class="btn-primary">Back to Home →</a>
+    <a href="process.html" class="btn-secondary">How It Works</a>
+  </div>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

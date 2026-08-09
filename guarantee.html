@@ -3,27 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Staffd.dev — The Guarantee</title>
+<title>The Guarantee Stack — Staffd.dev | 14-Day Free Trial, 7-Day Replacement</title>
+<meta name="description" content="Three guarantees, stacked. 14-day free trial, 7-day free replacement, and a 60-day relentless placement guarantee. Zero risk. The entire downside sits with Staffd, not you.">
+<link rel="canonical" href="https://www.staffd.dev/guarantee.html">
+
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Guarantee Stack — Staffd.dev">
+<meta property="og:description" content="Three guarantees, stacked. 14-day free trial, 7-day replacement, 60-day relentless placement. Zero risk hiring.">
+<meta property="og:url" content="https://www.staffd.dev/guarantee.html">
+<meta property="og:image" content="https://www.staffd.dev/assets/logo.svg">
+<meta property="og:site_name" content="Staffd.dev">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Guarantee Stack — Staffd.dev">
+<meta name="twitter:description" content="14-day free trial. 7-day replacement. 60-day relentless placement guarantee. Zero risk.">
+<meta name="twitter:image" content="https://www.staffd.dev/assets/logo.svg">
+
+<!-- Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- Styles -->
 <link rel="stylesheet" href="assets/shared.css">
 <link rel="stylesheet" href="assets/guarantee.css">
+<link rel="stylesheet" href="assets/booking.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H5C26PMZZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H5C26PMZZC');
+</script>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV (static fallback — swapped by partials fetch in config.js) -->
+<div id="site-nav">
 <nav>
-  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="" class="nav-logo-mark">staffd<span>.dev</span></a>
+  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Staffd.dev logo" class="nav-logo-mark">staffd<span>.dev</span></a>
   <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="process.html">How It Works</a></li>
     <li><a href="process.html#vetting">Vetting</a></li>
     <li><a href="guarantee.html" class="active">Guarantee</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
-    <li><a href="#" class="nav-cta book-call">Book a Call →</a></li>
+    <li><a href="#" class="nav-cta" data-action="open-booking-modal">Book a Call →</a></li>
   </ul>
 </nav>
+</div>
 
 <!-- ── HERO ── -->
 <div class="hero">
@@ -102,19 +141,19 @@
           <p class="g-body">Most staffing companies take your money before you've seen a line of code. We do the opposite. Your engineer starts, joins your Slack, gets access to your codebase, and starts shipping — and you pay nothing for the first 14 days.<br><br>This isn't a "risk-free trial" with a credit card on file. <strong>You genuinely owe us nothing for the first two weeks.</strong> If you're not happy for any reason — technical fit, communication style, work quality, gut feeling — you walk away. No invoice. No awkward conversation. We absorb the cost.</p>
           <div class="g-rules">
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>Engineer starts working in your codebase immediately — day one access to everything <span>they need to ship</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>Zero payment required for the first 14 calendar days — <span>no credit card holds, no deposit</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>Cancel anytime in the trial period for any reason — <span>or no reason at all</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>All code written during the trial is <span>100% yours regardless of outcome</span></div>
             </div>
           </div>
@@ -141,19 +180,19 @@
           <p class="g-body">Even after four stages of vetting, fit isn't 100% predictable. Team chemistry, working style, communication frequency preferences — sometimes it just doesn't click despite everyone's best efforts.<br><br>If that happens: you tell us, we say "of course," and we have replacement options in front of you <strong>within 48 hours</strong>. No invoice for the time already worked. No debate about whose fault it is. No replacement fee. We own the cost and we fix it.</p>
           <div class="g-rules">
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>Replacement options presented <span>within 48 hours of your request</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>The original engineer's first-week work is <span>not billed</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>Valid for technical mismatch, communication issues, <span>or simply not the right fit</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>You don't need to explain yourself — <span>"not working" is sufficient</span></div>
             </div>
           </div>
@@ -180,19 +219,19 @@
           <p class="g-body">This is the one that matters most. The deepest fear your buyer has isn't "what if the first engineer is wrong" — it's <strong>"what if I spend three months on this and it goes nowhere?"</strong> That fear has a name: being back where you started, with less runway, nothing to show, and the same hiring problem you started with.<br><br>The Relentless Placement Guarantee eliminates that scenario entirely. If — after all our vetting, all our matching, all our replacements — we still haven't placed an engineer who is committing code to your codebase within 60 days of your first engagement date, you owe us nothing. Not a delayed invoice. Not a reduced bill. <strong>Nothing. Zero.</strong></p>
           <div class="g-rules">
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>60-day window from your first engagement date — <span>not from when an engineer is placed</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>"Ships code" is defined as <span>committed, merged code in your main branch</span> — not a demo, not a PR, not a promise</div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>We cover unlimited replacements within the 60-day window — <span>at our cost</span></div>
             </div>
             <div class="g-rule">
-              <div class="g-rule-icon">✓</div>
+              <div class="g-rule-icon" role="img" aria-label="Checkmark">✓</div>
               <div>Full refund of any amounts paid if the 60-day window closes <span>without a successful placement</span></div>
             </div>
           </div>
@@ -390,7 +429,7 @@
     <div class="fm-quote">"I'M TERRIFIED<br>I'M NOT GOOD <em>ENOUGH</em><br>TO PULL THIS OFF."</div>
     <p class="fm-context">Nobody says this on a discovery call. But it's what every seed-stage founder is feeling when their roadmap is stalled, their competitor is shipping weekly, and their investor update is three weeks away.<br><br>The guarantees exist because <strong>the deepest fear isn't financial — it's identity.</strong> A founder who raises money becomes the person who's supposed to build the thing. When hiring stalls, that identity starts to crack.<br><br>Every guarantee on this page is designed to say the same thing in different ways: <strong>you can move forward without betting your remaining runway on a hope.</strong> The risk sits with us. You just need to make one call.</p>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
-      <a href="#" class="btn-main book-call">BOOK A 20-MIN CALL →</a>
+      <a href="#" class="btn-main" data-action="open-booking-modal">BOOK A 20-MIN CALL →</a>
       <a href="process.html#vetting" class="btn-ghost">See the Vetting Process</a>
     </div>
   </div>
@@ -405,7 +444,7 @@
         <p class="cta-box-sub">14-day free trial. 7-day replacement guarantee. 60-day relentless placement guarantee. No recruiter fees. No long-term contracts. No upfront payment.<br><br>Tell us what you need. We'll have names in front of you in 48 hours.</p>
       </div>
       <div class="cta-box-right">
-        <a href="#" class="btn-main book-call">BOOK A 20-MIN CALL →</a>
+        <a href="#" class="btn-main" data-action="open-booking-modal">BOOK A 20-MIN CALL →</a>
         <a href="index.html#pricing" class="btn-ghost">See Pricing First</a>
         <div class="cta-note">NO COMMITMENT · NO PITCH DECK</div>
       </div>
@@ -413,6 +452,8 @@
   </div>
 </div>
 
+<!-- FOOTER (static fallback — swapped by partials fetch in config.js) -->
+<div id="site-footer">
 <footer class="site-footer">
   <div>staffd<span style="color:var(--accent);">.dev</span> — © 2025</div>
   <div class="site-footer-links">
@@ -420,11 +461,104 @@
     <a href="process.html#vetting">Vetting</a>
     <a href="guarantee.html">Guarantee</a>
     <a href="index.html#pricing">Pricing</a>
-    <a href="#" class="book-call">Book a Call</a>
+    <a href="#" data-action="open-booking-modal">Book a Call</a>
   </div>
 </footer>
+</div>
 
+<!-- ═══════════════════════════════════════════════════════
+     BOOKING MODAL
+     ═══════════════════════════════════════════════════════ -->
+<div class="booking-overlay" id="bookCallOverlay" role="dialog" aria-modal="true" aria-label="Book a Call">
+  <div class="booking-modal" id="bookCallModal">
+    <div class="booking-modal-header">
+      <div class="booking-modal-title">Book a Call</div>
+      <button class="booking-modal-close" aria-label="Close booking modal">✕</button>
+    </div>
+    <div class="booking-modal-body">
+
+      <div class="booking-error-banner" id="bookingErrorBanner">
+        <p>Something went wrong sending your request. You can email us directly instead:</p>
+        <a href="mailto:info@staffd.dev?subject=Call%20Request">→ Email info@staffd.dev</a>
+      </div>
+
+      <form id="bookCallForm" novalidate>
+        <div class="booking-hp" aria-hidden="true">
+          <label for="bookingWebsite">Website</label>
+          <input type="text" id="bookingWebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingName">Name *</label>
+            <input type="text" id="bookingName" placeholder="Your name" required>
+            <div class="field-error">Name is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingEmail">Work Email *</label>
+            <input type="email" id="bookingEmail" placeholder="you@company.com" required>
+            <div class="field-error">Valid email is required</div>
+          </div>
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingCompany">Company *</label>
+            <input type="text" id="bookingCompany" placeholder="Company name" required>
+            <div class="field-error">Company is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingStack">Stack / Role Needed *</label>
+            <input type="text" id="bookingStack" placeholder="e.g. React + Node senior" required>
+            <div class="field-error">Stack / role is required</div>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="bookingNotes">Notes (optional)</label>
+          <textarea id="bookingNotes" placeholder="Anything else we should know — timeline, team size, specific challenges…"></textarea>
+        </div>
+
+        <div class="booking-datetime-label">Pick a date &amp; time (UK Time)</div>
+        <div class="booking-datetime-row">
+          <div>
+            <input type="text" id="bookingDate" placeholder="Select a date" style="display:none;">
+          </div>
+          <div>
+            <div id="timeSlots" class="time-slots"></div>
+            <div class="time-slot-label">All times in UK Time — email notification includes both UK &amp; Pakistan time.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="booking-submit">Book My Call →</button>
+
+        <div class="booking-privacy">
+          We'll only use this to contact you about your call. No spam.<br>
+          <a href="mailto:info@staffd.dev">Questions? Email us.</a>
+        </div>
+      </form>
+
+      <div class="booking-success" id="bookingSuccess" style="display:none;">
+        <div class="booking-success-icon">✓</div>
+        <h3>You're booked!</h3>
+        <p class="booking-success-details"></p>
+        <p>No pitch deck. We'll ask about your stack and what needs to ship — <em>that's it.</em></p>
+        <button class="booking-ics-btn" type="button">📅 Add to Calendar</button>
+        <div class="booking-reschedule">
+          Need to reschedule? <a href="mailto:info@staffd.dev">Email info@staffd.dev</a>
+        </div>
+        <button class="booking-done-btn" type="button" onclick="document.getElementById('bookCallOverlay').classList.remove('open'); document.body.style.overflow='';">Done</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
 <script src="assets/config.js"></script>
 <script src="assets/nav.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="assets/booking.js"></script>
 </body>
 </html>

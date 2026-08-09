@@ -4,25 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Staffd.dev — Elite Pakistani Engineers for US Startups</title>
+<meta name="description" content="Hire pre-vetted Pakistani engineers deployed in 7 days. 40–60% below US rates. No recruiter fees. No long-term contracts. 7-day replacement guarantee.">
+<link rel="canonical" href="https://www.staffd.dev/">
+
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Staffd.dev — Elite Pakistani Engineers for US Startups">
+<meta property="og:description" content="Pre-vetted engineers, deployed in 7 days. 40–60% below US rates. No recruiter fees. 7-day replacement guarantee.">
+<meta property="og:url" content="https://www.staffd.dev/">
+<meta property="og:image" content="https://www.staffd.dev/assets/logo.svg">
+<meta property="og:site_name" content="Staffd.dev">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Staffd.dev — Elite Pakistani Engineers for US Startups">
+<meta name="twitter:description" content="Pre-vetted engineers, deployed in 7 days. 40–60% below US rates. No recruiter fees.">
+<meta name="twitter:image" content="https://www.staffd.dev/assets/logo.svg">
+
+<!-- Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- Styles -->
 <link rel="stylesheet" href="assets/shared.css">
 <link rel="stylesheet" href="assets/home.css">
+<link rel="stylesheet" href="assets/booking.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H5C26PMZZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H5C26PMZZC');
+</script>
+
+<!-- Structured Data — Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Staffd.dev",
+  "url": "https://www.staffd.dev",
+  "logo": "https://www.staffd.dev/assets/logo.svg",
+  "description": "Elite Pakistani engineers for US startups. Pre-vetted, deployed in 7 days, 40–60% below US market rates.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@staffd.dev",
+    "contactType": "sales"
+  }
+}
+</script>
+
+<!-- Structured Data — Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Staff Augmentation",
+  "provider": {
+    "@type": "Organization",
+    "name": "Staffd.dev"
+  },
+  "name": "Pre-Vetted Engineering Talent",
+  "description": "Hire elite Pakistani engineers matched to your stack and deployed in 7 days. 4-stage vetting, 7-day replacement guarantee, 40–60% below US rates.",
+  "areaServed": "US",
+  "offers": {
+    "@type": "Offer",
+    "description": "Monthly rolling engagement, no recruiter fees, 14-day free trial"
+  }
+}
+</script>
+
+<!-- Structured Data — FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "I've been burned by offshore developers before.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "So have we. That's literally why we built Staffd. The problem isn't Pakistani talent — it's the process. Upwork dumps 500 profiles on you and makes you do all the work. We do the opposite. We vet before you see them, match on your stack specifically, and guarantee the fit. The risk is ours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about time zones? Pakistan is far.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our engineers work a flexible schedule that includes 4–6 hours of overlap with US East Coast business hours as standard. For async-first teams — which is most seed-stage startups — this is a non-issue. We confirm overlap requirements on the intake call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know they can actually communicate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stage 2 of our vetting is entirely dedicated to this. It's a 45-minute live call focused on English fluency, async written communication, and the ability to explain technical decisions clearly. More engineers fail on this than on the coding test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there long-term contracts or lock-ins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No minimum commitment. You hire on a rolling monthly basis. Scale up, scale down, or end the engagement — with 2 weeks notice. We're confident enough in our engineers that we don't need contracts to keep you."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
+<!-- NAV (static fallback — swapped by partials fetch in config.js) -->
+<div id="site-nav">
 <nav>
-  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="" class="nav-logo-mark">staffd<span>.dev</span></a>
+  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Staffd.dev logo" class="nav-logo-mark">staffd<span>.dev</span></a>
   <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="process.html">How It Works</a></li>
     <li><a href="process.html#vetting">Vetting</a></li>
     <li><a href="guarantee.html">Guarantee</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
-    <li><a href="#" class="nav-cta book-call">Book a Call →</a></li>
+    <li><a href="#" class="nav-cta" data-action="open-booking-modal">Book a Call →</a></li>
   </ul>
 </nav>
+</div>
 
 <!-- HERO -->
 <div class="hero-section">
@@ -83,28 +202,28 @@
   <div class="problem-grid">
     <ul class="problem-list">
       <li class="problem-item">
-        <div class="problem-icon">⏱️</div>
+        <div class="problem-icon" role="img" aria-label="Clock icon">⏱️</div>
         <div class="problem-text">
           <strong>200+ LinkedIn applications, 3 good ones</strong>
           You spend 40 hours sifting to find people who can't actually do the job.
         </div>
       </li>
       <li class="problem-item">
-        <div class="problem-icon">💸</div>
+        <div class="problem-icon" role="img" aria-label="Money icon">💸</div>
         <div class="problem-text">
           <strong>$20,000+ recruiter fees</strong>
           Traditional agencies charge 15–25% of annual salary. For a senior hire, that's rent money gone before they write a line of code.
         </div>
       </li>
       <li class="problem-item">
-        <div class="problem-icon">🔥</div>
+        <div class="problem-icon" role="img" aria-label="Fire icon">🔥</div>
         <div class="problem-text">
           <strong>Runway burning while you interview</strong>
           Every week without an engineer is a week your competitors are shipping and you're not.
         </div>
       </li>
       <li class="problem-item">
-        <div class="problem-icon">❓</div>
+        <div class="problem-icon" role="img" aria-label="Question icon">❓</div>
         <div class="problem-text">
           <strong>No way to know if they can actually build</strong>
           A CV doesn't tell you if someone can ship. An interview doesn't either. You only find out after they've started.
@@ -121,112 +240,12 @@
 
 <hr class="divider">
 
-<!-- HOW IT WORKS -->
+<!-- HOW IT WORKS (trimmed summary — full detail on process.html) -->
 <section id="how-it-works">
   <div class="section-tag">The Process</div>
   <h2>Three steps.<br><em>Seven days.</em> Done.</h2>
-  <p class="lead lead-narrow">No recruiter middlemen. No CV piles. Just the right engineer in your Slack, this week.</p>
-
-  <div class="hiw-steps">
-    <div class="hiw-step">
-      <div class="hiw-step-left">
-        <div class="hiw-num">1</div>
-        <div class="hiw-line"></div>
-      </div>
-      <div class="hiw-content">
-        <div class="hiw-time">Day 0 — 30 minutes</div>
-        <div class="hiw-title">Tell us what you need</div>
-        <div class="hiw-body">One call. You tell us your stack, your stage, what needs to ship, and what kind of person you want to work with. We ask real questions — not checkbox questions. The more honest you are about your actual problems, the better the match.</div>
-      </div>
-    </div>
-    <div class="hiw-step">
-      <div class="hiw-step-left">
-        <div class="hiw-num">2</div>
-        <div class="hiw-line"></div>
-      </div>
-      <div class="hiw-content">
-        <div class="hiw-time">Day 1–2 — 48 hours</div>
-        <div class="hiw-title">We match you from our vetted bench</div>
-        <div class="hiw-body">We go into our pre-vetted pool and pull the 2–3 engineers who fit your exact requirements. You get profiles, GitHub links, and a recorded technical assessment — not a CV pile. You're choosing from people we've already verified can do the job.</div>
-      </div>
-    </div>
-    <div class="hiw-step">
-      <div class="hiw-step-left">
-        <div class="hiw-num">3</div>
-        <div class="hiw-line"></div>
-      </div>
-      <div class="hiw-content">
-        <div class="hiw-time">Day 3–7</div>
-        <div class="hiw-title">One call. You decide. They start.</div>
-        <div class="hiw-body">One intro call per engineer — 45 minutes. You ask the technical questions you care about. You make the call. If you say yes, they're in your Slack the same week. If none of them are right, we go back and find more. No pressure, no pitch.</div>
-      </div>
-    </div>
-  </div>
+  <p class="lead">No recruiter middlemen. No CV piles. One call to tell us your stack and what needs to ship, a match from our vetted bench within 48 hours, and your engineer is in your Slack this week. If none of them click, we go back and find more — no pressure, no invoice.</p>
   <a href="process.html" class="link-more">See the full process →</a>
-</section>
-
-<hr class="divider">
-
-<!-- VETTING -->
-<section id="vetting">
-  <div class="section-tag">The Filter</div>
-  <h2>We reject <em>97%</em> of applicants.<br>Here's exactly why.</h2>
-  <p class="lead">"Pre-vetted" means nothing without proof. Here's the four-stage process every engineer on our bench has survived.</p>
-
-  <div class="vetting-grid">
-    <div class="vetting-card">
-      <div class="vetting-stage">Stage 1</div>
-      <div class="vetting-title">CV + GitHub Audit</div>
-      <div class="vetting-body">Manual review of every application. CV, GitHub commit history, live projects, LinkedIn. If we can't see real code they've shipped in a production environment, they don't move forward. No exceptions.</div>
-      <div class="vetting-pass">✓ 30% pass rate</div>
-    </div>
-    <div class="vetting-card">
-      <div class="vetting-stage">Stage 2</div>
-      <div class="vetting-title">Communication Interview</div>
-      <div class="vetting-body">45-minute live call focused entirely on English fluency and communication quality. Can they explain a technical decision clearly? Run a standup? Push back on a bad idea professionally? This kills more candidates than the coding test.</div>
-      <div class="vetting-pass">✓ 40% of Stage 1</div>
-    </div>
-    <div class="vetting-card">
-      <div class="vetting-stage">Stage 3</div>
-      <div class="vetting-title">Technical Assessment</div>
-      <div class="vetting-body">Stack-specific written test. Not LeetCode puzzles — real-world scenarios your engineers will actually face. "Here's a broken React component. Fix it and explain your reasoning." Scored against a rubric by our senior engineers.</div>
-      <div class="vetting-pass">✓ 50% of Stage 2</div>
-    </div>
-    <div class="vetting-card">
-      <div class="vetting-stage">Stage 4</div>
-      <div class="vetting-title">Live Coding Interview</div>
-      <div class="vetting-body">60 minutes, live, with a senior engineer. Build something from scratch under real conditions. We're watching how they think when stuck, not just whether they get to the right answer. Communication during the build is scored equally to the output.</div>
-      <div class="vetting-pass">✓ 60% of Stage 3</div>
-    </div>
-  </div>
-
-  <div class="vetting-funnel">
-    <div class="funnel-step">
-      <div class="funnel-num funnel-num-muted">100</div>
-      <div class="funnel-label">applicants</div>
-    </div>
-    <div class="funnel-arrow">→</div>
-    <div class="funnel-step">
-      <div class="funnel-num funnel-num-muted">30</div>
-      <div class="funnel-label">pass CV review</div>
-    </div>
-    <div class="funnel-arrow">→</div>
-    <div class="funnel-step">
-      <div class="funnel-num funnel-num-muted">12</div>
-      <div class="funnel-label">pass comms</div>
-    </div>
-    <div class="funnel-arrow">→</div>
-    <div class="funnel-step">
-      <div class="funnel-num funnel-num-muted">6</div>
-      <div class="funnel-label">pass tech test</div>
-    </div>
-    <div class="funnel-arrow">→</div>
-    <div class="funnel-step">
-      <div class="funnel-num funnel-num-highlight">3</div>
-      <div class="funnel-label funnel-label-accent">on our bench</div>
-    </div>
-  </div>
-  <a href="process.html#vetting" class="link-more">See the full vetting process →</a>
 </section>
 
 <hr class="divider">
@@ -242,7 +261,7 @@
     <div class="calc-sub">Select a role and level to see your monthly rate vs US equivalent</div>
     <div class="calc-controls">
       <div class="calc-field">
-        <label>Role</label>
+        <label for="calc-role">Role</label>
         <select id="calc-role" onchange="updateCalc()">
           <option value="fullstack">Full-Stack Developer</option>
           <option value="react">React / Frontend</option>
@@ -254,7 +273,7 @@
         </select>
       </div>
       <div class="calc-field">
-        <label>Level</label>
+        <label for="calc-level">Level</label>
         <select id="calc-level" onchange="updateCalc()">
           <option value="junior">Junior (1–3 yrs)</option>
           <option value="mid" selected>Mid (3–6 yrs)</option>
@@ -262,7 +281,7 @@
         </select>
       </div>
       <div class="calc-field">
-        <label>Engagement</label>
+        <label for="calc-engage">Engagement</label>
         <select id="calc-engage" onchange="updateCalc()">
           <option value="full">Full-time (160 hrs/mo)</option>
           <option value="part">Part-time (80 hrs/mo)</option>
@@ -287,30 +306,97 @@
       </div>
     </div>
     <div class="calc-cta">
-      <a href="#" class="btn-primary book-call">Book a Call to Confirm Rates →</a>
+      <a href="#" class="btn-primary" data-action="open-booking-modal">Book a Call to Confirm Rates →</a>
       <div class="calc-note">All-inclusive. No recruiter fees. No surprise invoices. Cancel anytime.</div>
     </div>
   </div>
 
-  <table class="comparison-table table-spaced">
-    <thead>
-      <tr>
-        <th>What's included</th>
-        <th>Traditional Agency</th>
-        <th>Upwork / Freelance</th>
-        <th class="col-staffd">Staffd</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>No fees until you hire</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
-      <tr><td>4-stage technical vetting</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
-      <tr><td>Matched in 48 hours</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
-      <tr><td>7-day replacement guarantee</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
-      <tr><td>No long-term contracts</td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-      <tr><td>Dedicated matching support</td><td><span class="check">✓</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
-      <tr><td>40–60% below US rates</td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-    </tbody>
-  </table>
+  <!-- Interactive Comparison Dashboard Widget -->
+  <div class="comp-widget">
+
+    <!-- Overall Coverage Score Cards -->
+    <div class="comp-scores">
+      <div class="comp-score-card highlight">
+        <div class="comp-score-title">Staffd Coverage</div>
+        <div class="comp-score-val">100% <span style="font-size:14px; font-weight:500; color:var(--accent);">(7/7)</span></div>
+        <div class="comp-score-bar-bg"><div class="comp-score-bar-fill staffd" style="width: 100%;"></div></div>
+      </div>
+      <div class="comp-score-card">
+        <div class="comp-score-title">Upwork / Freelance</div>
+        <div class="comp-score-val">28% <span style="font-size:14px; font-weight:500; color:var(--text3);">(2/7)</span></div>
+        <div class="comp-score-bar-bg"><div class="comp-score-bar-fill upwork" style="width: 28%;"></div></div>
+      </div>
+      <div class="comp-score-card">
+        <div class="comp-score-title">Traditional Agency</div>
+        <div class="comp-score-val">14% <span style="font-size:14px; font-weight:500; color:var(--text3);">(1/7)</span></div>
+        <div class="comp-score-bar-bg"><div class="comp-score-bar-fill agency" style="width: 14%;"></div></div>
+      </div>
+    </div>
+
+    <!-- Controls Toolbar -->
+    <div class="comp-toolbar">
+      <div class="comp-nav-group">
+        <button type="button" class="comp-cat-btn active" data-cat="all">All Features (7)</button>
+        <button type="button" class="comp-cat-btn" data-cat="vetting">Vetting &amp; Speed</button>
+        <button type="button" class="comp-cat-btn" data-cat="guarantee">Guarantee &amp; Risk</button>
+        <button type="button" class="comp-cat-btn" data-cat="cost">Cost &amp; Support</button>
+      </div>
+      <div class="comp-nav-group">
+        <button type="button" class="comp-view-btn active" data-view="all">Show All</button>
+        <button type="button" class="comp-view-btn" data-view="agency">vs Agency</button>
+        <button type="button" class="comp-view-btn" data-view="upwork">vs Upwork</button>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-wrap">
+      <canvas id="comparisonRadar" aria-label="Interactive bar chart comparing Staffd, Traditional Agency, and Upwork across 7 criteria. Staffd covers 100% of features." role="img"></canvas>
+    </div>
+
+    <!-- Dynamic Detail Breakdown Callout -->
+    <div class="comp-callout-box" id="compCallout">
+      <div class="comp-callout-header">
+        <div class="comp-callout-title" id="compCalloutTitle">No fees until hire</div>
+        <div class="comp-badges">
+          <span class="comp-badge pass" id="badgeStaffd">✓ Staffd Included</span>
+          <span class="comp-badge fail" id="badgeAgency">✕ Agency Excluded</span>
+          <span class="comp-badge fail" id="badgeUpwork">✕ Upwork Excluded</span>
+        </div>
+      </div>
+      <div class="comp-callout-text" id="compCalloutText">
+        Staffd charges $0 upfront with a 14-day trial. Agencies charge $15k–$25k before candidate writes code; Upwork bills hourly immediately.
+      </div>
+    </div>
+
+    <!-- Interactive Matrix Cards -->
+    <div class="comp-matrix-list" id="compMatrixList"></div>
+
+    <p class="chart-caption">Click any feature above or tap the chart bars to inspect why Staffd wins on every axis.</p>
+  </div>
+
+  <!-- SR-only fallback table for screen readers + SEO crawlers -->
+  <div class="sr-only">
+    <table class="comparison-table">
+      <caption>What's included — comparison of Staffd vs Traditional Agency vs Upwork/Freelance</caption>
+      <thead>
+        <tr>
+          <th>What's included</th>
+          <th>Traditional Agency</th>
+          <th>Upwork / Freelance</th>
+          <th>Staffd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>No fees until you hire</td><td>✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>4-stage technical vetting</td><td>✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Matched in 48 hours</td><td>✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>7-day replacement guarantee</td><td>✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>No long-term contracts</td><td>✕</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Dedicated matching support</td><td>✓</td><td>✕</td><td>✓</td></tr>
+        <tr><td>40–60% below US rates</td><td>✕</td><td>✓</td><td>✓</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <hr class="divider">
@@ -321,15 +407,15 @@
   <h2>The risk is ours,<br>not <em>yours.</em></h2>
 
   <div class="guarantee-box">
-    <div class="guarantee-icon">🛡️</div>
+    <div class="guarantee-icon" role="img" aria-label="Shield icon">🛡️</div>
     <div>
       <div class="guarantee-title">The Staffd 7-Day Guarantee</div>
       <div class="guarantee-body">If your engineer isn't the right fit within the first 7 days — for any reason, no explanation needed — we replace them for free. No invoice. No awkward conversation. No questions asked.<br><br>We're only paid when you're happy with who you've hired. That's the whole model.</div>
       <div class="guarantee-points">
-        <div class="guarantee-point"><div class="guarantee-point-dot">✓</div>Not the right technical fit? We replace.</div>
-        <div class="guarantee-point"><div class="guarantee-point-dot">✓</div>Communication issues? We replace.</div>
-        <div class="guarantee-point"><div class="guarantee-point-dot">✓</div>Just doesn't gel with the team? We replace.</div>
-        <div class="guarantee-point"><div class="guarantee-point-dot">✓</div>No invoice until you're satisfied.</div>
+        <div class="guarantee-point"><div class="guarantee-point-dot" role="img" aria-label="Checkmark">✓</div>Not the right technical fit? We replace.</div>
+        <div class="guarantee-point"><div class="guarantee-point-dot" role="img" aria-label="Checkmark">✓</div>Communication issues? We replace.</div>
+        <div class="guarantee-point"><div class="guarantee-point-dot" role="img" aria-label="Checkmark">✓</div>Just doesn't gel with the team? We replace.</div>
+        <div class="guarantee-point"><div class="guarantee-point-dot" role="img" aria-label="Checkmark">✓</div>No invoice until you're satisfied.</div>
       </div>
     </div>
   </div>
@@ -338,7 +424,7 @@
 
 <hr class="divider">
 
-<!-- OBJECTIONS -->
+<!-- OBJECTIONS / FAQ -->
 <section>
   <div class="section-tag">Real Questions</div>
   <h2>Things founders ask us<br>before they <em>hire.</em></h2>
@@ -371,12 +457,14 @@
   <h2>Your next engineer is already vetted.</h2>
   <p>The only question is how long you want to wait before they're in your codebase.</p>
   <div class="final-cta-buttons">
-    <a href="#" class="btn-primary book-call">Book a 20-min Call →</a>
+    <a href="#" class="btn-primary" data-action="open-booking-modal">Book a 20-min Call →</a>
     <a href="#pricing" class="btn-secondary">See Rates First</a>
   </div>
   <div class="final-note">No commitment. No pitch deck. Just tell us what you need.</div>
 </div>
 
+<!-- FOOTER (static fallback — swapped by partials fetch in config.js) -->
+<div id="site-footer">
 <footer class="site-footer">
   <div>staffd<span style="color:var(--accent);">.dev</span> — Elite Pakistani engineers for US startups</div>
   <div class="site-footer-links">
@@ -384,12 +472,113 @@
     <a href="process.html#vetting">Vetting</a>
     <a href="guarantee.html">Guarantee</a>
     <a href="index.html#pricing">Pricing</a>
-    <a href="#" class="book-call">Book a Call</a>
+    <a href="#" data-action="open-booking-modal">Book a Call</a>
   </div>
 </footer>
+</div>
 
+<!-- ═══════════════════════════════════════════════════════
+     BOOKING MODAL
+     ═══════════════════════════════════════════════════════ -->
+<div class="booking-overlay" id="bookCallOverlay" role="dialog" aria-modal="true" aria-label="Book a Call">
+  <div class="booking-modal" id="bookCallModal">
+    <div class="booking-modal-header">
+      <div class="booking-modal-title">Book a Call</div>
+      <button class="booking-modal-close" aria-label="Close booking modal">✕</button>
+    </div>
+    <div class="booking-modal-body">
+
+      <!-- Error banner (hidden by default) -->
+      <div class="booking-error-banner" id="bookingErrorBanner">
+        <p>Something went wrong sending your request. You can email us directly instead:</p>
+        <a href="mailto:info@staffd.dev?subject=Call%20Request">→ Email info@staffd.dev</a>
+      </div>
+
+      <!-- Form -->
+      <form id="bookCallForm" novalidate>
+
+        <!-- Honeypot (anti-spam) -->
+        <div class="booking-hp" aria-hidden="true">
+          <label for="bookingWebsite">Website</label>
+          <input type="text" id="bookingWebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingName">Name *</label>
+            <input type="text" id="bookingName" placeholder="Your name" required>
+            <div class="field-error">Name is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingEmail">Work Email *</label>
+            <input type="email" id="bookingEmail" placeholder="you@company.com" required>
+            <div class="field-error">Valid email is required</div>
+          </div>
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingCompany">Company *</label>
+            <input type="text" id="bookingCompany" placeholder="Company name" required>
+            <div class="field-error">Company is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingStack">Stack / Role Needed *</label>
+            <input type="text" id="bookingStack" placeholder="e.g. React + Node senior" required>
+            <div class="field-error">Stack / role is required</div>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="bookingNotes">Notes (optional)</label>
+          <textarea id="bookingNotes" placeholder="Anything else we should know — timeline, team size, specific challenges…"></textarea>
+        </div>
+
+        <!-- Date picker -->
+        <div class="booking-datetime-label">Pick a date &amp; time (UK Time)</div>
+        <div class="booking-datetime-row">
+          <div>
+            <input type="text" id="bookingDate" placeholder="Select a date" style="display:none;">
+          </div>
+          <div>
+            <div id="timeSlots" class="time-slots"></div>
+            <div class="time-slot-label">All times in UK Time — email notification includes both UK &amp; Pakistan time.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="booking-submit">Book My Call →</button>
+
+        <div class="booking-privacy">
+          We'll only use this to contact you about your call. No spam.<br>
+          <a href="mailto:info@staffd.dev">Questions? Email us.</a>
+        </div>
+      </form>
+
+      <!-- Success state (hidden by default) -->
+      <div class="booking-success" id="bookingSuccess" style="display:none;">
+        <div class="booking-success-icon">✓</div>
+        <h3>You're booked!</h3>
+        <p class="booking-success-details"></p>
+        <p>No pitch deck. We'll ask about your stack and what needs to ship — <em>that's it.</em></p>
+        <button class="booking-ics-btn" type="button">📅 Add to Calendar</button>
+        <div class="booking-reschedule">
+          Need to reschedule? <a href="mailto:info@staffd.dev">Email info@staffd.dev</a>
+        </div>
+        <button class="booking-done-btn" type="button" onclick="window.openBookingModal && document.getElementById('bookCallOverlay').classList.remove('open'); document.body.style.overflow='';">Done</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts (deferred for performance) -->
 <script src="assets/config.js"></script>
 <script src="assets/nav.js"></script>
 <script src="assets/pricing.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="assets/comparison-chart.js"></script>
+<script defer src="assets/booking.js"></script>
 </body>
 </html>

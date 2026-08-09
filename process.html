@@ -3,35 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Staffd.dev — How It Works &amp; Vetting</title>
+<title>How It Works &amp; Vetting Process — Staffd.dev</title>
+<meta name="description" content="See exactly how Staffd matches you with a pre-vetted Pakistani engineer in 7 days. Our 4-stage vetting rejects 97% of applicants — here's the full process.">
+<link rel="canonical" href="https://www.staffd.dev/process.html">
+
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="How It Works & Vetting Process — Staffd.dev">
+<meta property="og:description" content="Three steps, seven days. See how our 4-stage vetting process rejects 97% of applicants and delivers elite engineers to your team.">
+<meta property="og:url" content="https://www.staffd.dev/process.html">
+<meta property="og:image" content="https://www.staffd.dev/assets/logo.svg">
+<meta property="og:site_name" content="Staffd.dev">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How It Works & Vetting Process — Staffd.dev">
+<meta name="twitter:description" content="Three steps, seven days. See how our 4-stage vetting rejects 97% and delivers elite engineers.">
+<meta name="twitter:image" content="https://www.staffd.dev/assets/logo.svg">
+
+<!-- Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- Styles -->
 <link rel="stylesheet" href="assets/shared.css">
 <link rel="stylesheet" href="assets/process.css">
+<link rel="stylesheet" href="assets/booking.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H5C26PMZZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H5C26PMZZC');
+</script>
+
+<!-- Structured Data — FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens if the engineer isn't a good fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If it's within the first 7 days, we replace them for free — no questions, no invoice. After 7 days, we still help you find a replacement, but the engagement terms apply. We'd rather fix it fast than lose you as a client."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to sign a long-term contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No minimums, no lock-ins. You hire on a rolling monthly basis. Scale up or scale down with 2 weeks notice. We're confident enough in our engineers that we don't need contracts to keep you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What time zone do the engineers work in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pakistan is UTC+5. Our engineers are flexible — the standard engagement includes 4–6 hours of overlap with US East Coast hours. For async-first teams (which most seed-stage startups are) this is a non-issue. We confirm overlap requirements on the intake call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does payment work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You pay us a flat monthly rate — all-inclusive, no surprise invoices. No recruiter fee upfront. No percentage of salary. Just a clean monthly number that covers everything. Payment starts only after you've approved the hire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I hire the engineer full-time later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If you want to bring them on as a full-time employee after working together, we charge a one-time conversion fee. This is significantly cheaper than a traditional recruiter placement fee and we'll help facilitate the transition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What stacks do your engineers cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full-stack (React + Node most common), Python/Django, AI/ML Engineering, Mobile (iOS / Android / Flutter / React Native), DevOps/AWS, QA, and Data Engineering. If you need something specific, tell us on the intake call and we'll confirm before you proceed."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
+<!-- NAV (process.html has its own unique nav with tab buttons) -->
 <nav>
-  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="" class="nav-logo-mark">staffd<span>.dev</span></a>
-  <div class="nav-tabs">
-    <button class="nav-tab active" data-page="hiw" onclick="showPage('hiw', this)">How It Works</button>
-    <button class="nav-tab" data-page="vetting" onclick="showPage('vetting', this)">Vetting</button>
-  </div>
+  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Staffd.dev logo" class="nav-logo-mark">staffd<span>.dev</span></a>
+
   <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="process.html">How It Works</a></li>
     <li><a href="process.html#vetting">Vetting</a></li>
     <li><a href="guarantee.html">Guarantee</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
-    <li><a href="#" class="nav-cta book-call">Book a Call →</a></li>
+    <li><a href="#" class="nav-cta" data-action="open-booking-modal">Book a Call →</a></li>
   </ul>
 </nav>
 
-<div class="page-subnav nav-tabs">
-  <button class="nav-tab active" data-page="hiw" onclick="showPage('hiw', this)">How It Works</button>
-  <button class="nav-tab" data-page="vetting" onclick="showPage('vetting', this)">Vetting</button>
-</div>
+
 
 <!-- ══════════════════════════════
      HOW IT WORKS PAGE
@@ -88,7 +178,7 @@
               <div class="tm-left"><div class="tm-dot"></div></div>
               <div class="tm-content">
                 <div class="tm-day">DAY 7+</div>
-                <div class="tm-title">They're shipping 🚀</div>
+                <div class="tm-title">They're shipping <span role="img" aria-label="Rocket">🚀</span></div>
               </div>
             </div>
           </div>
@@ -242,8 +332,8 @@
       <h2>YOUR ENGINEER<br>IS <em>ALREADY VETTED.</em></h2>
       <p>The only question is how long you want to wait before they're in your codebase.</p>
       <div class="cta-btns">
-        <a href="#" class="btn-main book-call">BOOK A 20-MIN CALL →</a>
-        <a href="process.html#vetting" class="btn-ghost" onclick="void(0); showPage('vetting', document.querySelectorAll('.nav-tab')[1])">SEE THE VETTING PROCESS</a>
+        <a href="#" class="btn-main" data-action="open-booking-modal">BOOK A 20-MIN CALL →</a>
+        <a href="#page-vetting" class="btn-ghost">SEE THE VETTING PROCESS</a>
       </div>
       <div class="cta-note">NO COMMITMENT · NO PITCH DECK · JUST TELL US WHAT YOU NEED</div>
     </div>
@@ -255,7 +345,7 @@
 <!-- ══════════════════════════════
      VETTING PAGE
 ══════════════════════════════ -->
-<div class="page" id="page-vetting">
+<div class="page active" id="page-vetting">
 
   <!-- HERO -->
   <div class="vet-hero">
@@ -300,7 +390,7 @@
         <div class="funnel-arrow-down">↓</div>
         <div class="funnel-stage">
           <div class="funnel-bar-wrap">
-            <div class="funnel-bar" style="width:75%;">
+            <div class="funnel-bar" style="width:78%;">
               <span class="funnel-bar-label">Stage 1 — CV + GitHub</span>
               <span class="funnel-bar-count"><strong>30</strong>pass</span>
             </div>
@@ -310,7 +400,7 @@
         <div class="funnel-arrow-down">↓</div>
         <div class="funnel-stage">
           <div class="funnel-bar-wrap">
-            <div class="funnel-bar" style="width:50%;">
+            <div class="funnel-bar" style="width:58%;">
               <span class="funnel-bar-label">Stage 2 — Communication</span>
               <span class="funnel-bar-count"><strong>12</strong>pass</span>
             </div>
@@ -320,7 +410,7 @@
         <div class="funnel-arrow-down">↓</div>
         <div class="funnel-stage">
           <div class="funnel-bar-wrap">
-            <div class="funnel-bar" style="width:32%;">
+            <div class="funnel-bar" style="width:46%;">
               <span class="funnel-bar-label">Stage 3 — Tech Assessment</span>
               <span class="funnel-bar-count"><strong>6</strong>pass</span>
             </div>
@@ -330,9 +420,9 @@
         <div class="funnel-arrow-down">↓</div>
         <div class="funnel-stage">
           <div class="funnel-bar-wrap">
-            <div class="funnel-bar" style="width:18%; min-width: 260px;">
+            <div class="funnel-bar" style="width:34%;">
               <span class="funnel-bar-label">Stage 4 — Live Coding</span>
-              <span class="funnel-bar-count"><strong style="color:var(--accent); font-size:32px;">3</strong>on bench</span>
+              <span class="funnel-bar-count"><strong style="color:var(--accent); font-size:24px;">3</strong>on bench</span>
             </div>
           </div>
           <div class="funnel-pass-rate">pass rate <span>~60%</span> — <span>on your bench, ready to deploy</span></div>
@@ -449,32 +539,32 @@
       <h2 style="font-family:var(--display); font-size:clamp(36px,4vw,56px); letter-spacing:1px; color:var(--text); line-height:1; margin-bottom:0;">WHAT GETS SOMEONE ON THE BENCH</h2>
       <div class="criteria-grid">
         <div class="criteria-card">
-          <span class="criteria-icon">⚡</span>
+          <span class="criteria-icon" role="img" aria-label="Lightning bolt">⚡</span>
           <div class="criteria-title">SHIPS, DOESN'T JUST TALK</div>
           <div class="criteria-body">We look for engineers with <strong>deployed code</strong> — live apps, real users, production systems. Anyone can talk about architecture. Show us what you've shipped.</div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">🗣️</span>
+          <span class="criteria-icon" role="img" aria-label="Speech bubble">🗣️</span>
           <div class="criteria-title">COMMUNICATES LIKE A PEER</div>
           <div class="criteria-body">Your engineer will be in your Slack, on your standups, and pushing back on your product decisions. <strong>Communication quality is weighted as heavily as technical skill.</strong></div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">🔍</span>
+          <span class="criteria-icon" role="img" aria-label="Magnifying glass">🔍</span>
           <div class="criteria-title">DEBUGS UNDER PRESSURE</div>
           <div class="criteria-body">Startups break things constantly. We test how engineers handle <strong>unfamiliar problems</strong> — do they get methodical or do they freeze? Only engineers who get methodical make the bench.</div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">🏗️</span>
+          <span class="criteria-icon" role="img" aria-label="Building">🏗️</span>
           <div class="criteria-title">OWNS THEIR WORK</div>
           <div class="criteria-body">We screen for engineers who think about <strong>outcomes, not tasks</strong>. The difference between "I built what was asked" and "I noticed X was going to break and fixed it proactively."</div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">⚙️</span>
+          <span class="criteria-icon" role="img" aria-label="Gear">⚙️</span>
           <div class="criteria-title">ASYNC-NATIVE</div>
           <div class="criteria-body">Most seed-stage teams are async by default. Engineers must be able to <strong>write clearly, unblock themselves, and communicate progress</strong> without needing hand-holding on timezone overlap.</div>
         </div>
         <div class="criteria-card">
-          <span class="criteria-icon">📐</span>
+          <span class="criteria-icon" role="img" aria-label="Ruler">📐</span>
           <div class="criteria-title">STACK DEPTH, NOT BREADTH</div>
           <div class="criteria-body">We match on stack specifically. A great React engineer who's mediocre at Python stays in the React pool. <strong>No generalists padded as specialists.</strong> You get what you asked for.</div>
         </div>
@@ -537,7 +627,7 @@
       <h2>READY TO MEET<br>YOUR <em>NEXT HIRE?</em></h2>
       <p>Every engineer you'll meet has survived all four stages. One call is all it takes.</p>
       <div class="cta-btns">
-        <a href="#" class="btn-main book-call">BOOK A 20-MIN CALL →</a>
+        <a href="#" class="btn-main" data-action="open-booking-modal">BOOK A 20-MIN CALL →</a>
         <a href="process.html" class="btn-ghost" onclick="void(0); showPage('hiw', document.querySelectorAll('.nav-tab')[0])">SEE HOW IT WORKS</a>
       </div>
       <div class="cta-note">NO RECRUITER FEES · NO LONG-TERM CONTRACTS · 7-DAY GUARANTEE</div>
@@ -546,6 +636,8 @@
 
 </div>
 
+<!-- FOOTER (static fallback — swapped by partials fetch in config.js) -->
+<div id="site-footer">
 <footer class="site-footer">
   <div>staffd<span style="color:var(--accent);">.dev</span> — © 2025</div>
   <div class="site-footer-links">
@@ -553,12 +645,105 @@
     <a href="process.html#vetting">Vetting</a>
     <a href="guarantee.html">Guarantee</a>
     <a href="index.html#pricing">Pricing</a>
-    <a href="#" class="book-call">Book a Call</a>
+    <a href="#" data-action="open-booking-modal">Book a Call</a>
   </div>
 </footer>
+</div>
 
+<!-- ═══════════════════════════════════════════════════════
+     BOOKING MODAL
+     ═══════════════════════════════════════════════════════ -->
+<div class="booking-overlay" id="bookCallOverlay" role="dialog" aria-modal="true" aria-label="Book a Call">
+  <div class="booking-modal" id="bookCallModal">
+    <div class="booking-modal-header">
+      <div class="booking-modal-title">Book a Call</div>
+      <button class="booking-modal-close" aria-label="Close booking modal">✕</button>
+    </div>
+    <div class="booking-modal-body">
+
+      <div class="booking-error-banner" id="bookingErrorBanner">
+        <p>Something went wrong sending your request. You can email us directly instead:</p>
+        <a href="mailto:info@staffd.dev?subject=Call%20Request">→ Email info@staffd.dev</a>
+      </div>
+
+      <form id="bookCallForm" novalidate>
+        <div class="booking-hp" aria-hidden="true">
+          <label for="bookingWebsite">Website</label>
+          <input type="text" id="bookingWebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingName">Name *</label>
+            <input type="text" id="bookingName" placeholder="Your name" required>
+            <div class="field-error">Name is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingEmail">Work Email *</label>
+            <input type="email" id="bookingEmail" placeholder="you@company.com" required>
+            <div class="field-error">Valid email is required</div>
+          </div>
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingCompany">Company *</label>
+            <input type="text" id="bookingCompany" placeholder="Company name" required>
+            <div class="field-error">Company is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingStack">Stack / Role Needed *</label>
+            <input type="text" id="bookingStack" placeholder="e.g. React + Node senior" required>
+            <div class="field-error">Stack / role is required</div>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="bookingNotes">Notes (optional)</label>
+          <textarea id="bookingNotes" placeholder="Anything else we should know — timeline, team size, specific challenges…"></textarea>
+        </div>
+
+        <div class="booking-datetime-label">Pick a date &amp; time (UK Time)</div>
+        <div class="booking-datetime-row">
+          <div>
+            <input type="text" id="bookingDate" placeholder="Select a date" style="display:none;">
+          </div>
+          <div>
+            <div id="timeSlots" class="time-slots"></div>
+            <div class="time-slot-label">All times in UK Time — email notification includes both UK &amp; Pakistan time.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="booking-submit">Book My Call →</button>
+
+        <div class="booking-privacy">
+          We'll only use this to contact you about your call. No spam.<br>
+          <a href="mailto:info@staffd.dev">Questions? Email us.</a>
+        </div>
+      </form>
+
+      <div class="booking-success" id="bookingSuccess" style="display:none;">
+        <div class="booking-success-icon">✓</div>
+        <h3>You're booked!</h3>
+        <p class="booking-success-details"></p>
+        <p>No pitch deck. We'll ask about your stack and what needs to ship — <em>that's it.</em></p>
+        <button class="booking-ics-btn" type="button">📅 Add to Calendar</button>
+        <div class="booking-reschedule">
+          Need to reschedule? <a href="mailto:info@staffd.dev">Email info@staffd.dev</a>
+        </div>
+        <button class="booking-done-btn" type="button" onclick="document.getElementById('bookCallOverlay').classList.remove('open'); document.body.style.overflow='';">Done</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
 <script src="assets/config.js"></script>
 <script src="assets/nav.js"></script>
 <script src="assets/process.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="assets/booking.js"></script>
 </body>
 </html>
