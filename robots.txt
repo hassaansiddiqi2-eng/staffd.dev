@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /ops/
-Disallow: /partials/
-
-Sitemap: https://www.staffd.dev/sitemap.xml
