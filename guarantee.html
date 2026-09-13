@@ -519,13 +519,15 @@
           <textarea id="bookingNotes" placeholder="Anything else we should know — timeline, team size, specific challenges…"></textarea>
         </div>
 
-        <div class="booking-datetime-label">Pick a date &amp; time (UK Time)</div>
+        <div class="booking-datetime-label">Pick a date &amp; time (UK Time) *</div>
         <div class="booking-datetime-row">
-          <div>
+          <div id="bookingDateContainer" class="booking-date-container">
             <input type="text" id="bookingDate" placeholder="Select a date" style="display:none;">
+            <div class="datetime-error" id="bookingDateError">Date is required</div>
           </div>
-          <div>
+          <div id="timeSlotsContainer">
             <div id="timeSlots" class="time-slots"></div>
+            <div class="datetime-error" id="bookingTimeError">Time slot is required</div>
             <div class="time-slot-label">All times in UK Time — email notification includes both UK &amp; Pakistan time.</div>
           </div>
         </div>

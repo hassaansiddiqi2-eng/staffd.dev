@@ -27,9 +27,11 @@
 
     if (!overlay || !modal) return;
 
-    /* Init EmailJS if available */
+    /* Init EmailJS if available (v4 syntax) */
     if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
+      if (typeof emailjs.init === 'function') {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      }
     }
 
     /* Init Flatpickr if available */
@@ -43,7 +45,13 @@
             return date.getDay() === 0 || date.getDay() === 6;
           }
         ],
-        onChange: function () {
+        onChange: function (selectedDates) {
+          /* Clear date error highlight if present */
+          var dateWrap = document.getElementById('bookingDateContainer');
+          var dateErr = document.getElementById('bookingDateError');
+          if (dateWrap) dateWrap.classList.remove('has-error');
+          if (dateErr) dateErr.style.display = 'none';
+
           /* Clear any existing time selection visual when date changes */
           var slots = document.querySelectorAll('.time-slot');
           slots.forEach(function (s) { s.classList.remove('selected'); });
@@ -116,6 +124,12 @@
         btn.classList.add('selected');
         selectedTime = slot.label;
         selectedTimeRaw = { hour: slot.hour, minute: slot.minute };
+
+        var timeWrap = document.getElementById('timeSlotsContainer');
+        var timeErr = document.getElementById('bookingTimeError');
+        if (timeWrap) timeWrap.classList.remove('has-error');
+        if (container) container.classList.remove('has-error');
+        if (timeErr) timeErr.style.display = 'none';
       });
       container.appendChild(btn);
     });
@@ -141,12 +155,15 @@
     }
 
     var diffHours = isBST ? 4 : 5; // PKT is UTC+5
-    var pktHour24 = (hour24 + diffHours) % 24;
+    var totalPktHours = hour24 + diffHours;
+    var dayOffset = Math.floor(totalPktHours / 24);
+    var pktHour24 = totalPktHours % 24;
     var pktAmPm = pktHour24 >= 12 ? 'PM' : 'AM';
     var pktHour12 = pktHour24 % 12 || 12;
     var pktMinuteStr = minute === 0 ? '00' : (minute < 10 ? '0' + minute : minute);
 
-    return pktHour12 + ':' + pktMinuteStr + ' ' + pktAmPm + ' PKT';
+    var dayNote = dayOffset > 0 ? ' (+1 day)' : (dayOffset < 0 ? ' (-1 day)' : '');
+    return pktHour12 + ':' + pktMinuteStr + ' ' + pktAmPm + ' PKT' + dayNote;
   }
 
   /* ── UK Time to US Eastern Time (ET) converter ── */
@@ -157,12 +174,15 @@
 
     /* UK in BST (UTC+1), US ET in EDT (UTC-4) -> Diff is 5 hours.
        UK in GMT (UTC+0), US ET in EST (UTC-5) -> Diff is 5 hours. */
-    var etHour24 = (hour24 - 5 + 24) % 24;
+    var totalEtHours = hour24 - 5;
+    var dayOffset = Math.floor(totalEtHours / 24);
+    var etHour24 = ((totalEtHours % 24) + 24) % 24;
     var etAmPm = etHour24 >= 12 ? 'PM' : 'AM';
     var etHour12 = etHour24 % 12 || 12;
     var etMinuteStr = minute === 0 ? '00' : (minute < 10 ? '0' + minute : minute);
 
-    return etHour12 + ':' + etMinuteStr + ' ' + etAmPm + ' ET';
+    var dayNote = dayOffset < 0 ? ' (-1 day)' : (dayOffset > 0 ? ' (+1 day)' : '');
+    return etHour12 + ':' + etMinuteStr + ' ' + etAmPm + ' ET' + dayNote;
   }
 
   /* ── Modal open / close ── */
@@ -208,6 +228,18 @@
     }
   }
 
+  function getSelectedDate() {
+    if (dateInput && dateInput.selectedDates && dateInput.selectedDates.length > 0) {
+      return dateInput.selectedDates[0];
+    }
+    var rawInput = document.getElementById('bookingDate');
+    if (rawInput && rawInput.value) {
+      var parsed = new Date(rawInput.value);
+      if (!isNaN(parsed.getTime())) return parsed;
+    }
+    return null;
+  }
+
   /* ── Form validation ── */
   function validateForm() {
     var valid = true;
@@ -242,12 +274,31 @@
       }
     });
 
-    if (!dateInput || !dateInput.selectedDates || dateInput.selectedDates.length === 0) {
+    /* Date validation */
+    var dateWrap = document.getElementById('bookingDateContainer');
+    var dateErr = document.getElementById('bookingDateError');
+    var selectedDateObj = getSelectedDate();
+
+    if (!selectedDateObj) {
+      if (dateWrap) dateWrap.classList.add('has-error');
+      if (dateErr) dateErr.style.display = 'block';
       valid = false;
+    } else {
+      if (dateWrap) dateWrap.classList.remove('has-error');
+      if (dateErr) dateErr.style.display = 'none';
     }
 
+    /* Time slot validation */
+    var timeWrap = document.getElementById('timeSlotsContainer') || document.getElementById('timeSlots');
+    var timeErr = document.getElementById('bookingTimeError');
+
     if (!selectedTime || !selectedTimeRaw) {
+      if (timeWrap) timeWrap.classList.add('has-error');
+      if (timeErr) timeErr.style.display = 'block';
       valid = false;
+    } else {
+      if (timeWrap) timeWrap.classList.remove('has-error');
+      if (timeErr) timeErr.style.display = 'none';
     }
 
     return valid;
@@ -270,7 +321,7 @@
     var company = document.getElementById('bookingCompany').value.trim();
     var stack   = document.getElementById('bookingStack').value.trim();
     var notes   = document.getElementById('bookingNotes').value.trim();
-    var date    = dateInput.selectedDates[0];
+    var date    = getSelectedDate();
     var dateStr = formatDate(date);
 
     var ukTimeStr = selectedTime + ' UK Time';
@@ -300,7 +351,7 @@
     };
 
     if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_EMAILJS_PUBLIC_KEY') {
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, { publicKey: EMAILJS_PUBLIC_KEY })
         .then(function () {
           showSuccess(name, dateStr, ukTimeStr, pktTimeStr);
           trackBookingSuccess();

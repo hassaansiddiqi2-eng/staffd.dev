@@ -219,6 +219,21 @@
   text-align: center;
 }
 
+.datetime-error {
+  font-size: 12px;
+  color: var(--danger);
+  margin-top: 4px;
+  display: none;
+}
+
+.booking-date-container.has-error .flatpickr-calendar {
+  border: 1px solid var(--danger) !important;
+}
+
+.time-slots.has-error .time-slot {
+  border-color: rgba(255, 77, 77, 0.4);
+}
+
 /* ── Submit button ── */
 .booking-submit {
   width: 100%;

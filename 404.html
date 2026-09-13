@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/booking.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <style>
   .error-page {
     min-height: 100vh;
@@ -81,7 +83,103 @@
   </div>
 </div>
 
+<div class="booking-overlay" id="bookCallOverlay" role="dialog" aria-modal="true" aria-label="Book a Call">
+  <div class="booking-modal" id="bookCallModal">
+    <div class="booking-modal-header">
+      <div class="booking-modal-title">Book a Call</div>
+      <button class="booking-modal-close" aria-label="Close booking modal">✕</button>
+    </div>
+    <div class="booking-modal-body">
+
+      <!-- Error banner (hidden by default) -->
+      <div class="booking-error-banner" id="bookingErrorBanner">
+        <p>Something went wrong sending your request. You can email us directly instead:</p>
+        <a href="mailto:info@staffd.dev?subject=Call%20Request">→ Email info@staffd.dev</a>
+      </div>
+
+      <!-- Form -->
+      <form id="bookCallForm" novalidate>
+
+        <!-- Honeypot (anti-spam) -->
+        <div class="booking-hp" aria-hidden="true">
+          <label for="bookingWebsite">Website</label>
+          <input type="text" id="bookingWebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingName">Name *</label>
+            <input type="text" id="bookingName" placeholder="Your name" required>
+            <div class="field-error">Name is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingEmail">Work Email *</label>
+            <input type="email" id="bookingEmail" placeholder="you@company.com" required>
+            <div class="field-error">Valid email is required</div>
+          </div>
+        </div>
+
+        <div class="booking-row">
+          <div class="booking-field">
+            <label for="bookingCompany">Company *</label>
+            <input type="text" id="bookingCompany" placeholder="Company name" required>
+            <div class="field-error">Company is required</div>
+          </div>
+          <div class="booking-field">
+            <label for="bookingStack">Stack / Role Needed *</label>
+            <input type="text" id="bookingStack" placeholder="e.g. React + Node senior" required>
+            <div class="field-error">Stack / role is required</div>
+          </div>
+        </div>
+
+        <div class="booking-field">
+          <label for="bookingNotes">Notes (optional)</label>
+          <textarea id="bookingNotes" placeholder="Anything else we should know — timeline, team size, specific challenges…"></textarea>
+        </div>
+
+        <!-- Date picker -->
+        <div class="booking-datetime-label">Pick a date &amp; time (UK Time) *</div>
+        <div class="booking-datetime-row">
+          <div id="bookingDateContainer" class="booking-date-container">
+            <input type="text" id="bookingDate" placeholder="Select a date" style="display:none;">
+            <div class="datetime-error" id="bookingDateError">Date is required</div>
+          </div>
+          <div id="timeSlotsContainer">
+            <div id="timeSlots" class="time-slots"></div>
+            <div class="datetime-error" id="bookingTimeError">Time slot is required</div>
+            <div class="time-slot-label">All times in UK Time — email notification includes both UK &amp; Pakistan time.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="booking-submit">Book My Call →</button>
+
+        <div class="booking-privacy">
+          We'll only use this to contact you about your call. No spam.<br>
+          <a href="mailto:info@staffd.dev">Questions? Email us.</a>
+        </div>
+      </form>
+
+      <!-- Success state (hidden by default) -->
+      <div class="booking-success" id="bookingSuccess" style="display:none;">
+        <div class="booking-success-icon">✓</div>
+        <h3>You're booked!</h3>
+        <p class="booking-success-details">We've received your request and will follow up shortly with a calendar invite.</p>
+        <p>No pitch deck. We'll ask about your stack and what needs to ship — <em>that's it.</em></p>
+        <button class="booking-ics-btn" type="button">📅 Add to Calendar</button>
+        <div class="booking-reschedule">
+          Need to reschedule? <a href="mailto:info@staffd.dev">Email info@staffd.dev</a>
+        </div>
+        <button class="booking-done-btn" type="button" onclick="document.getElementById('bookCallOverlay').classList.remove('open'); document.body.style.overflow='';">Done</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script src="assets/config.js"></script>
 <script src="assets/nav.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="assets/booking.js"></script>
 </body>
 </html>
